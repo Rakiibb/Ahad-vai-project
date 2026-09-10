@@ -1,0 +1,1202 @@
+/* =========================================================
+   NEXORA ERP
+   EMPLOYEE MANAGEMENT
+   ========================================================= */
+
+
+/* =========================================================
+   1. MAIN PAGE
+   ========================================================= */
+
+main {
+    padding: 30px;
+}
+
+main > section {
+    margin-bottom: 24px;
+}
+
+
+/* =========================================================
+   2. PAGE HEADER
+   ========================================================= */
+
+main > section:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 4px 0 8px;
+}
+
+main > section:first-child > div {
+    min-width: 0;
+}
+
+main > section:first-child span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #2563eb;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+main > section:first-child h1 {
+    margin: 0;
+
+    color: #0f172a;
+
+    font-size: 27px;
+    font-weight: 750;
+
+    letter-spacing: -0.03em;
+}
+
+main > section:first-child p {
+    margin-top: 5px;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+
+/* Add Employee Button */
+
+#addEmployeeButton {
+    flex: 0 0 auto;
+
+    height: 42px;
+
+    padding: 0 17px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    border: 1px solid #2563eb;
+    border-radius: 8px;
+
+    background: #2563eb;
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    box-shadow:
+        0 2px 5px rgba(37, 99, 235, 0.18);
+
+    transition: all 0.2s ease;
+}
+
+#addEmployeeButton:hover {
+    background: #1d4ed8;
+    border-color: #1d4ed8;
+
+    box-shadow:
+        0 5px 12px rgba(37, 99, 235, 0.22);
+
+    transform: translateY(-1px);
+}
+
+#addEmployeeButton:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   3. EMPLOYEE STATISTICS
+   ========================================================= */
+
+main > section[aria-label="Employee Statistics"] {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+
+/* =========================================================
+   EMPLOYEE STATISTICS CARDS
+   Same visual style as Dashboard cards
+   ========================================================= */
+
+main > section[aria-label="Employee Statistics"] {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+
+/* Card */
+
+main > section[aria-label="Employee Statistics"] article {
+    position: relative;
+
+    min-height: 132px;
+
+    padding: 20px 21px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+
+    box-shadow:
+        0 1px 2px rgba(15, 23, 42, 0.03);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+/* Subtle top accent */
+
+main > section[aria-label="Employee Statistics"] article::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: #2563eb;
+
+    opacity: 0.9;
+}
+
+
+/* Hover */
+
+main > section[aria-label="Employee Statistics"] article:hover {
+    transform: translateY(-2px);
+
+    border-color: #d5deea;
+
+    box-shadow:
+        0 8px 20px rgba(15, 23, 42, 0.07);
+}
+
+
+/* Label */
+
+main > section[aria-label="Employee Statistics"] article span {
+    margin-bottom: 8px;
+
+    color: #64748b;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    line-height: 1.4;
+}
+
+
+/* Number */
+
+main > section[aria-label="Employee Statistics"] article strong {
+    color: #0f172a;
+
+    font-size: 29px;
+    font-weight: 750;
+
+    line-height: 1.1;
+
+    letter-spacing: -0.035em;
+}
+
+
+/* =========================================================
+   INDIVIDUAL CARD ACCENTS
+   ========================================================= */
+
+main > section[aria-label="Employee Statistics"] article:nth-child(1)::before {
+    background: #2563eb;
+}
+
+main > section[aria-label="Employee Statistics"] article:nth-child(2)::before {
+    background: #16a34a;
+}
+
+main > section[aria-label="Employee Statistics"] article:nth-child(3)::before {
+    background: #f59e0b;
+}
+
+main > section[aria-label="Employee Statistics"] article:nth-child(4)::before {
+    background: #8b5cf6;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    main > section[aria-label="Employee Statistics"] {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    main > section[aria-label="Employee Statistics"] {
+        grid-template-columns: 1fr;
+    }
+
+    main > section[aria-label="Employee Statistics"] article {
+        min-height: 110px;
+    }
+}
+
+/* =========================================================
+   4. EMPLOYEE DIRECTORY CARD
+   ========================================================= */
+
+main > section:nth-of-type(3) {
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+
+    box-shadow:
+        0 1px 3px rgba(15, 23, 42, 0.03);
+
+    overflow: hidden;
+}
+
+
+/* Directory Header */
+
+main > section:nth-of-type(3) > header {
+    padding: 21px 22px 17px;
+
+    border-bottom: 1px solid #eef2f6;
+}
+
+main > section:nth-of-type(3) > header h2 {
+    margin: 0;
+
+    color: #0f172a;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    letter-spacing: -0.015em;
+}
+
+main > section:nth-of-type(3) > header p {
+    margin-top: 4px;
+
+    color: #64748b;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   5. EMPLOYEE TOOLBAR
+   ========================================================= */
+
+#employeeToolbar {
+    padding: 18px 22px;
+
+    display: grid;
+    grid-template-columns: minmax(210px, 1.5fr) repeat(4, minmax(145px, 1fr)) auto;
+    gap: 12px;
+
+    background: #fafbfc;
+
+    border-bottom: 1px solid #eef2f6;
+}
+
+#employeeToolbar > div {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+#employeeToolbar label {
+    color: #475569;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+#employeeToolbar input,
+#employeeToolbar select {
+    width: 100%;
+    height: 39px;
+
+    padding: 0 11px;
+
+    border: 1px solid #dbe2ea;
+    border-radius: 7px;
+
+    background: #ffffff;
+    color: #334155;
+
+    font-size: 12px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#employeeToolbar input::placeholder {
+    color: #94a3b8;
+}
+
+#employeeToolbar input:focus,
+#employeeToolbar select:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+
+/* Reset Button */
+
+#resetEmployeeFilters {
+    align-self: end;
+
+    height: 39px;
+
+    padding: 0 13px;
+
+    border: 1px solid #dbe2ea;
+    border-radius: 7px;
+
+    background: #ffffff;
+    color: #475569;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition: all 0.2s ease;
+}
+
+#resetEmployeeFilters:hover {
+    background: #f8fafc;
+
+    border-color: #cbd5e1;
+    color: #2563eb;
+}
+
+
+/* =========================================================
+   6. EMPLOYEE TABLE
+   ========================================================= */
+
+main > section:nth-of-type(3) > div:not(#employeeEmptyState):not(#employeeToolbar) {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+main > section:nth-of-type(3) table {
+    width: 100%;
+
+    min-width: 1100px;
+
+    border-collapse: collapse;
+}
+
+main > section:nth-of-type(3) thead {
+    background: #f8fafc;
+}
+
+main > section:nth-of-type(3) th {
+    height: 45px;
+
+    padding: 0 15px;
+
+    color: #64748b;
+
+    border-bottom: 1px solid #e2e8f0;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    text-align: left;
+    text-transform: uppercase;
+
+    letter-spacing: 0.045em;
+
+    white-space: nowrap;
+}
+
+main > section:nth-of-type(3) td {
+    height: 64px;
+
+    padding: 10px 15px;
+
+    color: #334155;
+
+    border-bottom: 1px solid #eef2f6;
+
+    font-size: 12px;
+
+    white-space: nowrap;
+}
+
+main > section:nth-of-type(3) tbody tr {
+    transition: background 0.15s ease;
+}
+
+main > section:nth-of-type(3) tbody tr:hover {
+    background: #f8fbff;
+}
+
+main > section:nth-of-type(3) tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   7. EMPTY STATE
+   ========================================================= */
+
+#employeeEmptyState {
+    padding: 55px 20px;
+
+    text-align: center;
+
+    border-top: 1px solid #eef2f6;
+}
+
+#employeeEmptyState h3 {
+    color: #334155;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+#employeeEmptyState p {
+    margin-top: 5px;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   8. PAGINATION
+   ========================================================= */
+
+#employeePagination {
+    min-height: 64px;
+
+    padding: 12px 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    border-top: 1px solid #eef2f6;
+}
+
+#employeePagination p {
+    color: #64748b;
+
+    font-size: 11px;
+}
+
+#employeePagination p strong {
+    color: #334155;
+
+    font-weight: 700;
+}
+
+
+/* Pagination Right */
+
+#employeePagination > div:last-child {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+
+/* Previous / Next */
+
+#employeePreviousPage,
+#employeeNextPage {
+    height: 34px;
+
+    padding: 0 11px;
+
+    border: 1px solid #dbe2ea;
+    border-radius: 6px;
+
+    background: #ffffff;
+    color: #475569;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    transition: all 0.2s ease;
+}
+
+#employeePreviousPage:hover,
+#employeeNextPage:hover {
+    border-color: #cbd5e1;
+
+    background: #f8fafc;
+
+    color: #2563eb;
+}
+
+#employeePreviousPage:disabled,
+#employeeNextPage:disabled {
+    opacity: 0.45;
+
+    cursor: not-allowed;
+}
+
+
+/* Page Numbers */
+
+#employeePageNumbers {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+#employeePageNumbers button {
+    width: 34px;
+    height: 34px;
+
+    border: 1px solid transparent;
+    border-radius: 6px;
+
+    background: transparent;
+    color: #64748b;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+#employeePageNumbers button:hover {
+    background: #f1f5f9;
+    color: #2563eb;
+}
+
+#employeePageNumbers button.active {
+    background: #2563eb;
+    color: #ffffff;
+
+    border-color: #2563eb;
+}
+
+
+/* =========================================================
+   9. MAIN FOOTER
+   ========================================================= */
+
+#mainContent > footer {
+    padding: 0 30px 25px;
+}
+
+#mainContent > footer p {
+    color: #94a3b8;
+
+    font-size: 11px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   10. DIALOG / MODAL
+   ========================================================= */
+
+dialog {
+    width: min(600px, calc(100vw - 30px));
+
+    padding: 0;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 25px 70px rgba(15, 23, 42, 0.18);
+}
+
+dialog::backdrop {
+    background: rgba(15, 23, 42, 0.45);
+
+    backdrop-filter: blur(3px);
+}
+
+
+/* Modal Header */
+
+dialog > header {
+    min-height: 70px;
+
+    padding: 17px 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    border-bottom: 1px solid #e2e8f0;
+}
+
+dialog > header span {
+    color: #2563eb;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+dialog > header h2 {
+    margin-top: 2px;
+
+    color: #0f172a;
+
+    font-size: 17px;
+    font-weight: 700;
+}
+
+
+/* Modal Close */
+
+#closeEmployeeModal,
+#closeEmployeeProfile,
+#closeNotificationModal,
+#closeUserMenuModal {
+    height: 34px;
+
+    padding: 0 11px;
+
+    border: 1px solid #dbe2ea;
+    border-radius: 6px;
+
+    background: #ffffff;
+    color: #64748b;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+#closeEmployeeModal:hover,
+#closeEmployeeProfile:hover,
+#closeNotificationModal:hover,
+#closeUserMenuModal:hover {
+    background: #f8fafc;
+    color: #2563eb;
+}
+
+
+/* =========================================================
+   11. EMPLOYEE FORM
+   ========================================================= */
+
+#employeeForm {
+    padding: 22px;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+#employeeForm > div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+#employeeForm label {
+    color: #475569;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+#employeeForm input,
+#employeeForm select,
+#employeeForm textarea {
+    width: 100%;
+
+    padding: 0 11px;
+
+    border: 1px solid #dbe2ea;
+    border-radius: 7px;
+
+    background: #ffffff;
+    color: #334155;
+
+    font-size: 12px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#employeeForm input,
+#employeeForm select {
+    height: 40px;
+}
+
+#employeeForm textarea {
+    min-height: 85px;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    resize: vertical;
+}
+
+#employeeForm input:focus,
+#employeeForm select:focus,
+#employeeForm textarea:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+
+/* Full Width Fields */
+
+#employeeForm > div:nth-last-child(3),
+#employeeForm > div:nth-last-child(2) {
+    grid-column: 1 / -1;
+}
+
+
+/* Error */
+
+#employeeForm small {
+    min-height: 13px;
+
+    color: #dc2626;
+
+    font-size: 10px;
+}
+
+
+/* Form Message */
+
+#employeeFormMessage {
+    grid-column: 1 / -1;
+
+    min-height: 18px;
+
+    color: #dc2626;
+
+    font-size: 11px;
+}
+
+
+/* Form Footer */
+
+#employeeForm > footer {
+    grid-column: 1 / -1;
+
+    padding-top: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+
+    border-top: 1px solid #eef2f6;
+}
+
+
+/* Cancel */
+
+#cancelEmployeeForm {
+    height: 39px;
+
+    padding: 0 14px;
+
+    border: 1px solid #dbe2ea;
+    border-radius: 7px;
+
+    background: #ffffff;
+    color: #475569;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#cancelEmployeeForm:hover {
+    background: #f8fafc;
+}
+
+
+/* Save */
+
+#saveEmployeeButton {
+    height: 39px;
+
+    padding: 0 16px;
+
+    border: 1px solid #2563eb;
+    border-radius: 7px;
+
+    background: #2563eb;
+    color: #ffffff;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    transition: all 0.2s ease;
+}
+
+#saveEmployeeButton:hover {
+    background: #1d4ed8;
+    border-color: #1d4ed8;
+}
+
+
+/* =========================================================
+   12. PROFILE MODAL
+   ========================================================= */
+
+#employeeProfileContent {
+    padding: 22px;
+
+    min-height: 150px;
+}
+
+#employeeProfileModal > footer {
+    padding: 15px 22px;
+
+    display: flex;
+    justify-content: flex-end;
+
+    border-top: 1px solid #eef2f6;
+}
+
+#editProfileEmployee {
+    height: 38px;
+
+    padding: 0 15px;
+
+    border: 1px solid #2563eb;
+    border-radius: 7px;
+
+    background: #2563eb;
+    color: #ffffff;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   13. DELETE MODAL
+   ========================================================= */
+
+#deleteEmployeeModal {
+    max-width: 430px;
+}
+
+#deleteEmployeeModal > div {
+    padding: 22px;
+}
+
+#deleteEmployeeModal > div p {
+    color: #475569;
+
+    font-size: 13px;
+}
+
+#deleteEmployeeModal > div p + p {
+    margin-top: 5px;
+
+    color: #94a3b8;
+
+    font-size: 11px;
+}
+
+#deleteEmployeeModal > footer {
+    padding: 15px 22px;
+
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+
+    border-top: 1px solid #eef2f6;
+}
+
+#cancelDeleteEmployee,
+#confirmDeleteEmployee {
+    height: 38px;
+
+    padding: 0 14px;
+
+    border-radius: 7px;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#cancelDeleteEmployee {
+    border: 1px solid #dbe2ea;
+
+    background: #ffffff;
+    color: #475569;
+}
+
+#confirmDeleteEmployee {
+    border: 1px solid #dc2626;
+
+    background: #dc2626;
+    color: #ffffff;
+}
+
+#confirmDeleteEmployee:hover {
+    background: #b91c1c;
+}
+
+
+/* =========================================================
+   14. GLOBAL LOADING
+   ========================================================= */
+
+#loadingOverlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(248, 250, 252, 0.75);
+
+    backdrop-filter: blur(3px);
+}
+
+#loadingOverlay[hidden] {
+    display: none !important;
+}
+
+#loadingOverlay:not([hidden]) {
+    display: flex;
+}
+
+#loadingOverlay > div {
+    padding: 15px 20px;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.1);
+}
+
+#loadingOverlay span {
+    color: #475569;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   15. TOAST
+   ========================================================= */
+
+#toastContainer {
+    position: fixed;
+
+    right: 22px;
+    bottom: 22px;
+
+    z-index: 10000;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+/* =========================================================
+   16. RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    main > section[aria-label="Employee Statistics"] {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #employeeToolbar {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    #employeeToolbar > div:first-child {
+        grid-column: 1 / -1;
+    }
+
+    #resetEmployeeFilters {
+        align-self: end;
+    }
+}
+
+
+/* =========================================================
+   17. RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    main {
+        padding: 20px 15px 30px;
+    }
+
+    main > section:first-child {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    main > section:first-child h1 {
+        font-size: 23px;
+    }
+
+    #addEmployeeButton {
+        width: 100%;
+    }
+
+    main > section[aria-label="Employee Statistics"] {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    main > section[aria-label="Employee Statistics"] article {
+        min-height: 105px;
+        padding: 16px;
+    }
+
+    main > section[aria-label="Employee Statistics"] article strong {
+        font-size: 23px;
+    }
+
+    #employeeToolbar {
+        grid-template-columns: 1fr;
+        padding: 16px;
+    }
+
+    #employeeToolbar > div:first-child {
+        grid-column: auto;
+    }
+
+    #resetEmployeeFilters {
+        width: 100%;
+    }
+
+    main > section:nth-of-type(3) > header {
+        padding: 18px 16px 15px;
+    }
+
+    #employeePagination {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 14px 16px;
+    }
+
+    #employeePagination > div:last-child {
+        width: 100%;
+
+        justify-content: space-between;
+    }
+
+    #employeeForm {
+        grid-template-columns: 1fr;
+        padding: 18px;
+    }
+
+    #employeeForm > div {
+        grid-column: auto !important;
+    }
+
+    #employeeForm > footer {
+        grid-column: 1 / -1;
+    }
+}
+
+
+/* =========================================================
+   18. SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    main > section[aria-label="Employee Statistics"] {
+        grid-template-columns: 1fr;
+    }
+
+    main > section[aria-label="Employee Statistics"] article {
+        min-height: 95px;
+    }
+
+    #employeePageNumbers button {
+        width: 30px;
+        height: 30px;
+    }
+
+    #employeePreviousPage,
+    #employeeNextPage {
+        height: 30px;
+        padding: 0 8px;
+    }
+
+    dialog {
+        width: calc(100vw - 20px);
+    }
+
+    dialog > header {
+        padding: 15px;
+    }
+
+    #employeeForm {
+        padding: 15px;
+    }
+}
+
