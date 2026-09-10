@@ -1,0 +1,1613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reports | NEXORA ERP</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+
+    <!-- ================================
+         APP WRAPPER
+    ================================= -->
+    <div class="app-wrapper">
+
+        <!-- ================================
+             SIDEBAR
+        ================================= -->
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-header">
+
+                <a href="dashboard.html" class="logo">
+                    <span class="logo-icon">N</span>
+                    <span class="logo-text">NEXORA</span>
+                </a>
+
+                <button
+                    type="button"
+                    class="sidebar-close"
+                    id="sidebarClose"
+                    aria-label="Close sidebar"
+                >
+                    &times;
+                </button>
+
+            </div>
+
+
+            <!-- Navigation -->
+            <nav class="sidebar-nav">
+
+                <div class="nav-section">
+
+                    <p class="nav-section-title">
+                        MAIN
+                    </p>
+
+                    <a href="dashboard.html" class="nav-link">
+                        <span class="nav-icon">▦</span>
+                        <span>Dashboard</span>
+                    </a>
+
+                    <a href="employees.html" class="nav-link">
+                        <span class="nav-icon">👥</span>
+                        <span>Employees</span>
+                    </a>
+
+                    <a href="customers.html" class="nav-link">
+                        <span class="nav-icon">♙</span>
+                        <span>Customers</span>
+                    </a>
+
+                    <a href="products.html" class="nav-link">
+                        <span class="nav-icon">▣</span>
+                        <span>Products</span>
+                    </a>
+
+                    <a href="inventory.html" class="nav-link">
+                        <span class="nav-icon">◫</span>
+                        <span>Inventory</span>
+                    </a>
+
+                    <a href="sales.html" class="nav-link">
+                        <span class="nav-icon">↗</span>
+                        <span>Sales</span>
+                    </a>
+
+                    <a href="invoice.html" class="nav-link">
+                        <span class="nav-icon">▤</span>
+                        <span>Invoices</span>
+                    </a>
+
+                    <a href="finance.html" class="nav-link">
+                        <span class="nav-icon">$</span>
+                        <span>Finance</span>
+                    </a>
+
+                    <a
+                        href="reports.html"
+                        class="nav-link active"
+                        aria-current="page"
+                    >
+                        <span class="nav-icon">▥</span>
+                        <span>Reports</span>
+                    </a>
+
+                </div>
+
+
+                <div class="nav-section">
+
+                    <p class="nav-section-title">
+                        SYSTEM
+                    </p>
+
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">⚙</span>
+                        <span>Settings</span>
+                    </a>
+
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">?</span>
+                        <span>Help &amp; Support</span>
+                    </a>
+
+                </div>
+
+            </nav>
+
+
+            <!-- Sidebar Footer -->
+            <div class="sidebar-footer">
+
+                <div class="sidebar-user-mini">
+
+                    <div class="user-avatar">
+                        <span>RA</span>
+                    </div>
+
+                    <div class="sidebar-user-info">
+                        <strong>Admin User</strong>
+                        <span>Administrator</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ================================
+             MAIN WRAPPER
+        ================================= -->
+        <div class="main-wrapper">
+
+            <!-- ================================
+                 TOP NAVBAR
+            ================================= -->
+            <header class="top-navbar">
+
+                <div class="navbar-left">
+
+                    <button
+                        type="button"
+                        class="sidebar-toggle"
+                        id="sidebarToggle"
+                        aria-label="Toggle sidebar"
+                    >
+                        ☰
+                    </button>
+
+
+                    <!-- Global Search -->
+                    <div class="global-search">
+
+                        <span class="search-icon">
+                            ⌕
+                        </span>
+
+                        <input
+                            type="search"
+                            id="globalSearch"
+                            placeholder="Search anything..."
+                            autocomplete="off"
+                        >
+
+                        <span class="search-shortcut">
+                            Ctrl + K
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="navbar-right">
+
+                    <!-- Notification -->
+                    <button
+                        type="button"
+                        class="navbar-icon-btn notification-btn"
+                        id="notificationBtn"
+                        aria-label="Notifications"
+                    >
+                        🔔
+
+                        <span
+                            class="notification-badge"
+                            id="notificationBadge"
+                        >
+                            4
+                        </span>
+                    </button>
+
+
+                    <!-- Theme Toggle -->
+                    <button
+                        type="button"
+                        class="navbar-icon-btn theme-toggle"
+                        id="themeToggle"
+                        aria-label="Toggle theme"
+                    >
+                        ☾
+                    </button>
+
+
+                    <!-- User Menu -->
+                    <div class="user-menu-wrapper">
+
+                        <button
+                            type="button"
+                            class="user-menu-btn"
+                            id="userMenuBtn"
+                        >
+
+                            <span class="user-avatar small">
+                                RA
+                            </span>
+
+                            <span class="user-menu-text">
+
+                                <strong>
+                                    Admin User
+                                </strong>
+
+                                <small>
+                                    Administrator
+                                </small>
+
+                            </span>
+
+                            <span class="dropdown-arrow">
+                                ⌄
+                            </span>
+
+                        </button>
+
+
+                        <!-- User Dropdown -->
+                        <div
+                            class="user-dropdown"
+                            id="userDropdown"
+                        >
+
+                            <a
+                                href="#"
+                                class="dropdown-item"
+                            >
+                                <span>👤</span>
+                                <span>My Profile</span>
+                            </a>
+
+                            <a
+                                href="#"
+                                class="dropdown-item"
+                            >
+                                <span>⚙</span>
+                                <span>Settings</span>
+                            </a>
+
+                            <div class="dropdown-divider"></div>
+
+                            <button
+                                type="button"
+                                class="dropdown-item logout-btn"
+                                id="logoutBtn"
+                            >
+                                <span>↪</span>
+                                <span>Logout</span>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- ================================
+                 MAIN CONTENT
+            ================================= -->
+            <main class="main-content">
+
+                <!-- ================================
+                     PAGE HEADER
+                ================================= -->
+                <div class="page-header">
+
+                    <div class="page-header-left">
+
+                        <div class="breadcrumb">
+
+                            <a href="dashboard.html">
+                                Dashboard
+                            </a>
+
+                            <span>/</span>
+
+                            <span>
+                                Reports
+                            </span>
+
+                        </div>
+
+                        <h1>
+                            Reports
+                        </h1>
+
+                        <p>
+                            Analyze business performance and generate detailed reports.
+                        </p>
+
+                    </div>
+
+
+                    <div class="page-header-actions">
+
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            id="printReportBtn"
+                        >
+                            🖨 Print
+                        </button>
+
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            id="exportReportBtn"
+                        >
+                            ⇩ Export Report
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================================
+                     REPORT FILTERS
+                ================================= -->
+                <section class="content-card report-filter-card">
+
+                    <div class="content-card-header">
+
+                        <div>
+
+                            <h2>
+                                Report Filters
+                            </h2>
+
+                            <p>
+                                Select the report type and date range.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="report-filters">
+
+                        <!-- Report Type -->
+                        <div class="form-group">
+
+                            <label for="reportType">
+                                Report Type
+                            </label>
+
+                            <select
+                                id="reportType"
+                                class="form-select"
+                            >
+
+                                <option value="sales" selected>
+                                    Sales Report
+                                </option>
+
+                                <option value="revenue">
+                                    Revenue Report
+                                </option>
+
+                                <option value="products">
+                                    Product Report
+                                </option>
+
+                                <option value="employees">
+                                    Employee Performance
+                                </option>
+
+                                <option value="customers">
+                                    Customer Report
+                                </option>
+
+                                <option value="inventory">
+                                    Inventory Report
+                                </option>
+
+                                <option value="finance">
+                                    Financial Report
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Date From -->
+                        <div class="form-group">
+
+                            <label for="reportDateFrom">
+                                From
+                            </label>
+
+                            <input
+                                type="date"
+                                id="reportDateFrom"
+                                class="form-input"
+                            >
+
+                        </div>
+
+
+                        <!-- Date To -->
+                        <div class="form-group">
+
+                            <label for="reportDateTo">
+                                To
+                            </label>
+
+                            <input
+                                type="date"
+                                id="reportDateTo"
+                                class="form-input"
+                            >
+
+                        </div>
+
+
+                        <!-- Quick Range -->
+                        <div class="form-group">
+
+                            <label for="reportQuickRange">
+                                Quick Range
+                            </label>
+
+                            <select
+                                id="reportQuickRange"
+                                class="form-select"
+                            >
+
+                                <option value="">
+                                    Custom Range
+                                </option>
+
+                                <option value="today">
+                                    Today
+                                </option>
+
+                                <option value="week">
+                                    This Week
+                                </option>
+
+                                <option value="month" selected>
+                                    This Month
+                                </option>
+
+                                <option value="quarter">
+                                    This Quarter
+                                </option>
+
+                                <option value="year">
+                                    This Year
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Generate -->
+                        <div class="form-group report-generate-wrapper">
+
+                            <label>
+                                &nbsp;
+                            </label>
+
+                            <button
+                                type="button"
+                                class="btn btn-primary"
+                                id="generateReportBtn"
+                            >
+                                Generate Report
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ================================
+                     REPORT SUMMARY
+                ================================= -->
+                <section class="stats-grid report-stats">
+
+                    <!-- Total Sales -->
+                    <article class="stat-card">
+
+                        <div class="stat-card-header">
+
+                            <div class="stat-icon">
+                                ↗
+                            </div>
+
+                            <span class="stat-period">
+                                Selected Period
+                            </span>
+
+                        </div>
+
+                        <div class="stat-card-body">
+
+                            <h2 id="reportTotalSales">
+                                $0.00
+                            </h2>
+
+                            <p class="stat-label">
+                                Total Sales
+                            </p>
+
+                            <span
+                                class="stat-change positive"
+                                id="reportSalesChange"
+                            >
+                                ↑ 0%
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Total Orders -->
+                    <article class="stat-card">
+
+                        <div class="stat-card-header">
+
+                            <div class="stat-icon">
+                                #
+                            </div>
+
+                            <span class="stat-period">
+                                Selected Period
+                            </span>
+
+                        </div>
+
+                        <div class="stat-card-body">
+
+                            <h2 id="reportTotalOrders">
+                                0
+                            </h2>
+
+                            <p class="stat-label">
+                                Total Orders
+                            </p>
+
+                            <span
+                                class="stat-change"
+                                id="reportOrdersChange"
+                            >
+                                0 orders
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Average Order -->
+                    <article class="stat-card">
+
+                        <div class="stat-card-header">
+
+                            <div class="stat-icon">
+                                $
+                            </div>
+
+                            <span class="stat-period">
+                                Selected Period
+                            </span>
+
+                        </div>
+
+                        <div class="stat-card-body">
+
+                            <h2 id="reportAverageOrder">
+                                $0.00
+                            </h2>
+
+                            <p class="stat-label">
+                                Average Order Value
+                            </p>
+
+                            <span
+                                class="stat-change"
+                                id="reportAverageChange"
+                            >
+                                Per order
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Growth -->
+                    <article class="stat-card">
+
+                        <div class="stat-card-header">
+
+                            <div class="stat-icon">
+                                %
+                            </div>
+
+                            <span class="stat-period">
+                                Compared to Previous
+                            </span>
+
+                        </div>
+
+                        <div class="stat-card-body">
+
+                            <h2 id="reportGrowth">
+                                0%
+                            </h2>
+
+                            <p class="stat-label">
+                                Business Growth
+                            </p>
+
+                            <span
+                                class="stat-change positive"
+                                id="reportGrowthChange"
+                            >
+                                No comparison yet
+                            </span>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+                <!-- ================================
+                     REPORT CHARTS
+                ================================= -->
+                <section class="dashboard-grid reports-chart-grid">
+
+                    <!-- Main Report Chart -->
+                    <div class="content-card chart-card large">
+
+                        <div class="content-card-header">
+
+                            <div>
+
+                                <h2 id="mainReportChartTitle">
+                                    Sales Performance
+                                </h2>
+
+                                <p id="mainReportChartDescription">
+                                    Sales performance over the selected period.
+                                </p>
+
+                            </div>
+
+
+                            <select
+                                id="reportChartType"
+                                class="form-select small"
+                            >
+
+                                <option value="line" selected>
+                                    Line Chart
+                                </option>
+
+                                <option value="bar">
+                                    Bar Chart
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="chart-container">
+
+                            <canvas
+                                id="mainReportChart"
+                                aria-label="Main report chart"
+                            ></canvas>
+
+                            <div
+                                class="chart-empty-state"
+                                id="mainReportChartEmpty"
+                                hidden
+                            >
+
+                                <span>
+                                    ▥
+                                </span>
+
+                                <p>
+                                    No report data available.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Distribution Chart -->
+                    <div class="content-card chart-card">
+
+                        <div class="content-card-header">
+
+                            <div>
+
+                                <h2>
+                                    Distribution
+                                </h2>
+
+                                <p>
+                                    Data distribution by category.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="chart-container doughnut-chart-container">
+
+                            <canvas
+                                id="reportDistributionChart"
+                                aria-label="Report distribution chart"
+                            ></canvas>
+
+                            <div
+                                class="chart-empty-state"
+                                id="reportDistributionChartEmpty"
+                                hidden
+                            >
+
+                                <span>
+                                    ◌
+                                </span>
+
+                                <p>
+                                    No distribution data available.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ================================
+                     TOP PERFORMERS
+                ================================= -->
+                <section class="dashboard-grid report-performance-grid">
+
+                    <!-- Top Products -->
+                    <div class="content-card">
+
+                        <div class="content-card-header">
+
+                            <div>
+
+                                <h2>
+                                    Top Products
+                                </h2>
+
+                                <p>
+                                    Best performing products.
+                                </p>
+
+                            </div>
+
+                            <span class="report-period-label">
+                                Selected Period
+                            </span>
+
+                        </div>
+
+
+                        <div class="ranking-list" id="topProductsList">
+
+                            <!-- Dynamic product rankings -->
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Top Employees -->
+                    <div class="content-card">
+
+                        <div class="content-card-header">
+
+                            <div>
+
+                                <h2>
+                                    Top Employees
+                                </h2>
+
+                                <p>
+                                    Employee performance ranking.
+                                </p>
+
+                            </div>
+
+                            <span class="report-period-label">
+                                Selected Period
+                            </span>
+
+                        </div>
+
+
+                        <div class="ranking-list" id="topEmployeesList">
+
+                            <!-- Dynamic employee rankings -->
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Top Customers -->
+                    <div class="content-card">
+
+                        <div class="content-card-header">
+
+                            <div>
+
+                                <h2>
+                                    Top Customers
+                                </h2>
+
+                                <p>
+                                    Customers by purchase value.
+                                </p>
+
+                            </div>
+
+                            <span class="report-period-label">
+                                Selected Period
+                            </span>
+
+                        </div>
+
+
+                        <div class="ranking-list" id="topCustomersList">
+
+                            <!-- Dynamic customer rankings -->
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ================================
+                     GENERATED REPORT TABLE
+                ================================= -->
+                <section class="content-card report-table-card">
+
+                    <div class="content-card-header">
+
+                        <div>
+
+                            <h2 id="reportTableTitle">
+                                Sales Report
+                            </h2>
+
+                            <p id="reportTableDescription">
+                                Detailed sales data for the selected period.
+                            </p>
+
+                        </div>
+
+
+                        <div class="content-card-actions">
+
+                            <button
+                                type="button"
+                                class="btn btn-secondary btn-sm"
+                                id="refreshReportBtn"
+                            >
+                                ↻ Refresh
+                            </button>
+
+                            <button
+                                type="button"
+                                class="btn btn-primary btn-sm"
+                                id="downloadReportBtn"
+                            >
+                                ⇩ Download
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Search / Filter -->
+                    <div class="table-toolbar">
+
+                        <div class="toolbar-left">
+
+                            <div class="table-search">
+
+                                <span class="search-icon">
+                                    ⌕
+                                </span>
+
+                                <input
+                                    type="search"
+                                    id="reportSearch"
+                                    placeholder="Search report..."
+                                >
+
+                            </div>
+
+
+                            <select
+                                id="reportStatusFilter"
+                                class="form-select"
+                            >
+
+                                <option value="">
+                                    All Status
+                                </option>
+
+                                <option value="completed">
+                                    Completed
+                                </option>
+
+                                <option value="pending">
+                                    Pending
+                                </option>
+
+                                <option value="cancelled">
+                                    Cancelled
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="toolbar-right">
+
+                            <select
+                                id="reportSort"
+                                class="form-select"
+                            >
+
+                                <option value="newest">
+                                    Newest First
+                                </option>
+
+                                <option value="oldest">
+                                    Oldest First
+                                </option>
+
+                                <option value="amount-high">
+                                    Amount: High to Low
+                                </option>
+
+                                <option value="amount-low">
+                                    Amount: Low to High
+                                </option>
+
+                            </select>
+
+
+                            <button
+                                type="button"
+                                class="btn btn-secondary"
+                                id="resetReportFilters"
+                            >
+                                Reset
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Report Table -->
+                    <div class="table-responsive">
+
+                        <table
+                            class="data-table"
+                            id="reportTable"
+                        >
+
+                            <thead id="reportTableHead">
+
+                                <tr>
+
+                                    <th>
+                                        #
+                                    </th>
+
+                                    <th>
+                                        Date
+                                    </th>
+
+                                    <th>
+                                        Reference
+                                    </th>
+
+                                    <th>
+                                        Customer
+                                    </th>
+
+                                    <th>
+                                        Items
+                                    </th>
+
+                                    <th>
+                                        Amount
+                                    </th>
+
+                                    <th>
+                                        Status
+                                    </th>
+
+                                    <th>
+                                        Actions
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="reportTableBody">
+
+                                <!-- Dynamic report rows -->
+
+                            </tbody>
+
+                        </table>
+
+
+                        <!-- Empty State -->
+                        <div
+                            class="table-empty-state"
+                            id="reportEmptyState"
+                            hidden
+                        >
+
+                            <div class="empty-icon">
+                                ▥
+                            </div>
+
+                            <h3>
+                                No report data found
+                            </h3>
+
+                            <p>
+                                Generate a report or change your filters
+                                to view available data.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Pagination -->
+                    <div class="table-footer">
+
+                        <div class="pagination-info">
+
+                            Showing
+
+                            <strong id="reportStart">
+                                1
+                            </strong>
+
+                            -
+
+                            <strong id="reportEnd">
+                                10
+                            </strong>
+
+                            of
+
+                            <strong id="reportTotal">
+                                0
+                            </strong>
+
+                            records
+
+                        </div>
+
+
+                        <div
+                            class="pagination"
+                            id="reportPagination"
+                        >
+
+                            <button
+                                type="button"
+                                class="pagination-btn"
+                                id="reportPrevPage"
+                                disabled
+                                aria-label="Previous page"
+                            >
+                                ‹
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="pagination-btn active"
+                                data-page="1"
+                            >
+                                1
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="pagination-btn"
+                                id="reportNextPage"
+                                aria-label="Next page"
+                            >
+                                ›
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ================================
+                     REPORT SUMMARY
+                ================================= -->
+                <section class="content-card report-summary-card">
+
+                    <div class="content-card-header">
+
+                        <div>
+
+                            <h2>
+                                Report Summary
+                            </h2>
+
+                            <p>
+                                Automatically generated insights from the report.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="report-insights"
+                        id="reportInsights"
+                    >
+
+                        <!-- Dynamic insights -->
+
+                        <div class="insight-item">
+
+                            <div class="insight-icon">
+                                ✓
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Report Ready
+                                </strong>
+
+                                <p>
+                                    Generate a report to see business insights.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </main>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================
+         REPORT DETAILS MODAL
+    ================================= -->
+    <div
+        class="modal-overlay"
+        id="reportDetailsModal"
+        hidden
+    >
+
+        <div
+            class="modal modal-lg"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="reportDetailsTitle"
+        >
+
+            <div class="modal-header">
+
+                <div>
+
+                    <h2 id="reportDetailsTitle">
+                        Report Details
+                    </h2>
+
+                    <p>
+                        Detailed information about this record.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="reportDetailsClose"
+                    aria-label="Close modal"
+                >
+                    &times;
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <div class="details-grid">
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Reference
+                        </span>
+
+                        <strong id="reportDetailsReference">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Date
+                        </span>
+
+                        <strong id="reportDetailsDate">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Customer
+                        </span>
+
+                        <strong id="reportDetailsCustomer">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Amount
+                        </span>
+
+                        <strong id="reportDetailsAmount">
+                            $0.00
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Items
+                        </span>
+
+                        <strong id="reportDetailsItems">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Status
+                        </span>
+
+                        <strong id="reportDetailsStatus">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="report-details-extra">
+
+                    <h3>
+                        Additional Information
+                    </h3>
+
+                    <div id="reportDetailsExtra">
+                        No additional information available.
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    id="reportDetailsCloseBtn"
+                >
+                    Close
+                </button>
+
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="reportDetailsPrintBtn"
+                >
+                    🖨 Print
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================
+         NOTIFICATION MODAL
+    ================================= -->
+    <div
+        class="modal-overlay"
+        id="notificationModal"
+        hidden
+    >
+
+        <div
+            class="modal modal-md notification-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="notificationModalTitle"
+        >
+
+            <div class="modal-header">
+
+                <div>
+
+                    <h2 id="notificationModalTitle">
+                        Notifications
+                    </h2>
+
+                    <p>
+                        Recent alerts and updates.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="notificationModalClose"
+                    aria-label="Close notifications"
+                >
+                    &times;
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <div
+                    class="notification-list"
+                    id="notificationList"
+                >
+
+                    <!-- Notifications will be rendered by JS -->
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    id="markNotificationsRead"
+                >
+                    Mark All as Read
+                </button>
+
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="closeNotificationsBtn"
+                >
+                    Close
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================
+         LOGOUT MODAL
+    ================================= -->
+    <div
+        class="modal-overlay"
+        id="logoutModal"
+        hidden
+    >
+
+        <div
+            class="modal modal-sm"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="logoutModalTitle"
+        >
+
+            <div class="modal-header">
+
+                <h2 id="logoutModalTitle">
+                    Logout
+                </h2>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="logoutModalClose"
+                    aria-label="Close modal"
+                >
+                    &times;
+                </button>
+
+            </div>
+
+
+            <div class="modal-body confirmation-content">
+
+                <div class="confirmation-icon">
+                    ↪
+                </div>
+
+                <h3>
+                    Are you sure you want to logout?
+                </h3>
+
+                <p>
+                    You will be redirected to the login page.
+                </p>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    id="cancelLogout"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="button"
+                    class="btn btn-danger"
+                    id="confirmLogout"
+                >
+                    Logout
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================
+         GLOBAL LOADING OVERLAY
+    ================================= -->
+    <div
+        class="loading-overlay"
+        id="loadingOverlay"
+        hidden
+    >
+
+        <div class="loading-spinner"></div>
+
+        <p>
+            Generating report...
+        </p>
+
+    </div>
+
+
+    <!-- ================================
+         TOAST CONTAINER
+    ================================= -->
+    <div
+        class="toast-container"
+        id="toastContainer"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+
+    <!-- ================================
+         SCRIPTS
+    ================================= -->
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Main Application -->
+    <script
+        type="module"
+        src="../js/app.js"
+    ></script>
+
+    <!-- Reports Page -->
+    <script
+        type="module"
+        src="../js/reports.js"
+    ></script>
+
+</body>
+</html>

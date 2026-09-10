@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="NEXORA ERP Employee Management"
+    >
+
+    <title>Employees | NEXORA ERP</title>
+</head>
+
+<body>
+
+    <!-- =========================================
+         NEXORA ERP - EMPLOYEE MANAGEMENT
+    ========================================== -->
+
+    <div id="app">
+
+        <!-- =====================================
+             SIDEBAR
+        ====================================== -->
+
+        <aside id="sidebar">
+
+            <!-- Brand -->
+            <div>
+
+                <a href="dashboard.html">
+
+                    <h1>NEXORA ERP</h1>
+
+                    <span>
+                        Smart Business Management
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <!-- Navigation -->
+            <nav aria-label="Dashboard Navigation">
+
+                <ul>
+
+                    <li>
+                        <a href="dashboard.html">
+                            Dashboard
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="employees.html"
+                            class="active"
+                        >
+                            Employees
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="customers.html">
+                            Customers
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="products.html">
+                            Products
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="inventory.html">
+                            Inventory
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="sales.html">
+                            Sales
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="invoice.html">
+                            Invoices
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="finance.html">
+                            Finance
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="reports.html">
+                            Reports & Analytics
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+
+            <!-- Sidebar Bottom -->
+            <div>
+
+                <a href="#">
+                    Settings
+                </a>
+
+                <button
+                    type="button"
+                    id="logoutButton"
+                >
+                    Logout
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =====================================
+             MAIN CONTENT
+        ====================================== -->
+
+        <div id="mainContent">
+
+
+            <!-- =================================
+                 NAVBAR
+            ================================== -->
+
+            <header id="topNavbar">
+
+                <button
+                    type="button"
+                    id="sidebarToggle"
+                    aria-label="Open navigation menu"
+                >
+                    Menu
+                </button>
+
+
+                <div>
+
+                    <p>
+                        Management
+                    </p>
+
+                    <h2>
+                        Employee Management
+                    </h2>
+
+                </div>
+
+
+                <div>
+
+                    <!-- Global Search -->
+                    <form
+                        id="globalSearchForm"
+                        role="search"
+                    >
+
+                        <label
+                            for="globalSearch"
+                            hidden
+                        >
+                            Search
+                        </label>
+
+                        <input
+                            type="search"
+                            id="globalSearch"
+                            placeholder="Search..."
+                            autocomplete="off"
+                        >
+
+                        <button type="submit">
+                            Search
+                        </button>
+
+                    </form>
+
+
+                    <!-- Notifications -->
+                    <button
+                        type="button"
+                        id="notificationButton"
+                        aria-label="Open notifications"
+                    >
+                        Notifications
+                    </button>
+
+
+                    <!-- Theme -->
+                    <button
+                        type="button"
+                        id="themeToggle"
+                        aria-label="Toggle dark and light mode"
+                    >
+                        Theme
+                    </button>
+
+
+                    <!-- User -->
+                    <button
+                        type="button"
+                        id="userMenuButton"
+                    >
+                        Admin
+                    </button>
+
+                </div>
+
+            </header>
+
+
+            <!-- =================================
+                 PAGE CONTENT
+            ================================== -->
+
+            <main>
+
+
+                <!-- Page Header -->
+                <section>
+
+                    <div>
+
+                        <span>
+                            Management
+                        </span>
+
+                        <h1>
+                            Employees
+                        </h1>
+
+                        <p>
+                            Manage your company's employees,
+                            departments and workforce.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Add Employee -->
+                    <button
+                        type="button"
+                        id="addEmployeeButton"
+                    >
+                        + Add New Employee
+                    </button>
+
+                </section>
+
+
+                <!-- =================================
+                     EMPLOYEE STATISTICS
+                ================================== -->
+
+                <section aria-label="Employee Statistics">
+
+                    <article>
+
+                        <span>
+                            Total Employees
+                        </span>
+
+                        <strong id="employeeTotalCount">
+                            0
+                        </strong>
+
+                    </article>
+
+
+                    <article>
+
+                        <span>
+                            Active Employees
+                        </span>
+
+                        <strong id="activeEmployeeCount">
+                            0
+                        </strong>
+
+                    </article>
+
+
+                    <article>
+
+                        <span>
+                            Inactive Employees
+                        </span>
+
+                        <strong id="inactiveEmployeeCount">
+                            0
+                        </strong>
+
+                    </article>
+
+
+                    <article>
+
+                        <span>
+                            Departments
+                        </span>
+
+                        <strong id="departmentCount">
+                            0
+                        </strong>
+
+                    </article>
+
+                </section>
+
+
+                <!-- =================================
+                     SEARCH / FILTER / SORT
+                ================================== -->
+
+                <section>
+
+                    <header>
+
+                        <div>
+
+                            <h2>
+                                Employee Directory
+                            </h2>
+
+                            <p>
+                                Search and manage employee records.
+                            </p>
+
+                        </div>
+
+                    </header>
+
+
+                    <!-- Toolbar -->
+                    <div id="employeeToolbar">
+
+
+                        <!-- Search -->
+                        <div>
+
+                            <label for="employeeSearch">
+                                Search Employees
+                            </label>
+
+                            <input
+                                type="search"
+                                id="employeeSearch"
+                                placeholder="Search by name, email or ID..."
+                                autocomplete="off"
+                            >
+
+                        </div>
+
+
+                        <!-- Department Filter -->
+                        <div>
+
+                            <label for="departmentFilter">
+                                Department
+                            </label>
+
+                            <select id="departmentFilter">
+
+                                <option value="all">
+                                    All Departments
+                                </option>
+
+                                <option value="sales">
+                                    Sales
+                                </option>
+
+                                <option value="marketing">
+                                    Marketing
+                                </option>
+
+                                <option value="hr">
+                                    Human Resources
+                                </option>
+
+                                <option value="finance">
+                                    Finance
+                                </option>
+
+                                <option value="it">
+                                    Information Technology
+                                </option>
+
+                                <option value="operations">
+                                    Operations
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Position Filter -->
+                        <div>
+
+                            <label for="positionFilter">
+                                Position
+                            </label>
+
+                            <select id="positionFilter">
+
+                                <option value="all">
+                                    All Positions
+                                </option>
+
+                                <option value="manager">
+                                    Manager
+                                </option>
+
+                                <option value="executive">
+                                    Executive
+                                </option>
+
+                                <option value="developer">
+                                    Developer
+                                </option>
+
+                                <option value="designer">
+                                    Designer
+                                </option>
+
+                                <option value="accountant">
+                                    Accountant
+                                </option>
+
+                                <option value="officer">
+                                    Officer
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Status Filter -->
+                        <div>
+
+                            <label for="statusFilter">
+                                Status
+                            </label>
+
+                            <select id="statusFilter">
+
+                                <option value="all">
+                                    All Status
+                                </option>
+
+                                <option value="active">
+                                    Active
+                                </option>
+
+                                <option value="inactive">
+                                    Inactive
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Sort -->
+                        <div>
+
+                            <label for="employeeSort">
+                                Sort By
+                            </label>
+
+                            <select id="employeeSort">
+
+                                <option value="newest">
+                                    Newest First
+                                </option>
+
+                                <option value="oldest">
+                                    Oldest First
+                                </option>
+
+                                <option value="nameAsc">
+                                    Name A-Z
+                                </option>
+
+                                <option value="nameDesc">
+                                    Name Z-A
+                                </option>
+
+                                <option value="salaryHigh">
+                                    Salary High-Low
+                                </option>
+
+                                <option value="salaryLow">
+                                    Salary Low-High
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Reset Filters -->
+                        <button
+                            type="button"
+                            id="resetEmployeeFilters"
+                        >
+                            Reset Filters
+                        </button>
+
+                    </div>
+
+
+                    <!-- =================================
+                         EMPLOYEE TABLE
+                    ================================== -->
+
+                    <div>
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Employee
+                                    </th>
+
+                                    <th>
+                                        Employee ID
+                                    </th>
+
+                                    <th>
+                                        Department
+                                    </th>
+
+                                    <th>
+                                        Position
+                                    </th>
+
+                                    <th>
+                                        Email
+                                    </th>
+
+                                    <th>
+                                        Phone
+                                    </th>
+
+                                    <th>
+                                        Joining Date
+                                    </th>
+
+                                    <th>
+                                        Salary
+                                    </th>
+
+                                    <th>
+                                        Status
+                                    </th>
+
+                                    <th>
+                                        Actions
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="employeeTableBody">
+
+                                <!-- Employee rows will be
+                                     dynamically inserted here -->
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+                    <!-- Empty State -->
+                    <div
+                        id="employeeEmptyState"
+                        hidden
+                    >
+
+                        <h3>
+                            No Employees Found
+                        </h3>
+
+                        <p>
+                            Try changing your search or filters.
+                        </p>
+
+                    </div>
+
+
+                    <!-- =================================
+                         PAGINATION
+                    ================================== -->
+
+                    <footer id="employeePagination">
+
+                        <div>
+
+                            <p>
+                                Showing
+                                <strong id="employeeStart">
+                                    0
+                                </strong>
+                                -
+                                <strong id="employeeEnd">
+                                    0
+                                </strong>
+                                of
+                                <strong id="employeeTotal">
+                                    0
+                                </strong>
+                                employees
+                            </p>
+
+                        </div>
+
+
+                        <div>
+
+                            <button
+                                type="button"
+                                id="employeePreviousPage"
+                                aria-label="Previous page"
+                            >
+                                Previous
+                            </button>
+
+
+                            <div id="employeePageNumbers">
+
+                                <!-- Page numbers dynamically inserted -->
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                id="employeeNextPage"
+                                aria-label="Next page"
+                            >
+                                Next
+                            </button>
+
+                        </div>
+
+                    </footer>
+
+                </section>
+
+            </main>
+
+
+            <!-- =================================
+                 FOOTER
+            ================================== -->
+
+            <footer>
+
+                <p>
+                    &copy; 2026 NEXORA ERP.
+                    All rights reserved.
+                </p>
+
+            </footer>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         ADD / EDIT EMPLOYEE MODAL
+    ========================================== -->
+
+    <dialog id="employeeModal">
+
+        <header>
+
+            <div>
+
+                <span>
+                    Employee Management
+                </span>
+
+                <h2 id="employeeModalTitle">
+                    Add New Employee
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="closeEmployeeModal"
+                aria-label="Close employee form"
+            >
+                Close
+            </button>
+
+        </header>
+
+
+        <!-- Employee Form -->
+        <form id="employeeForm">
+
+            <!-- Employee ID -->
+            <div>
+
+                <label for="employeeId">
+                    Employee ID
+                </label>
+
+                <input
+                    type="text"
+                    id="employeeId"
+                    name="employeeId"
+                    placeholder="EMP-001"
+                    required
+                >
+
+                <small
+                    id="employeeIdError"
+                    role="alert"
+                ></small>
+
+            </div>
+
+
+            <!-- Full Name -->
+            <div>
+
+                <label for="employeeName">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="employeeName"
+                    name="name"
+                    placeholder="Enter employee name"
+                    required
+                >
+
+                <small
+                    id="employeeNameError"
+                    role="alert"
+                ></small>
+
+            </div>
+
+
+            <!-- Email -->
+            <div>
+
+                <label for="employeeEmail">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="employeeEmail"
+                    name="email"
+                    placeholder="employee@example.com"
+                    required
+                >
+
+                <small
+                    id="employeeEmailError"
+                    role="alert"
+                ></small>
+
+            </div>
+
+
+            <!-- Phone -->
+            <div>
+
+                <label for="employeePhone">
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="employeePhone"
+                    name="phone"
+                    placeholder="Enter phone number"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Department -->
+            <div>
+
+                <label for="employeeDepartment">
+                    Department
+                </label>
+
+                <select
+                    id="employeeDepartment"
+                    name="department"
+                    required
+                >
+
+                    <option value="">
+                        Select Department
+                    </option>
+
+                    <option value="sales">
+                        Sales
+                    </option>
+
+                    <option value="marketing">
+                        Marketing
+                    </option>
+
+                    <option value="hr">
+                        Human Resources
+                    </option>
+
+                    <option value="finance">
+                        Finance
+                    </option>
+
+                    <option value="it">
+                        Information Technology
+                    </option>
+
+                    <option value="operations">
+                        Operations
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Position -->
+            <div>
+
+                <label for="employeePosition">
+                    Position
+                </label>
+
+                <select
+                    id="employeePosition"
+                    name="position"
+                    required
+                >
+
+                    <option value="">
+                        Select Position
+                    </option>
+
+                    <option value="manager">
+                        Manager
+                    </option>
+
+                    <option value="executive">
+                        Executive
+                    </option>
+
+                    <option value="developer">
+                        Developer
+                    </option>
+
+                    <option value="designer">
+                        Designer
+                    </option>
+
+                    <option value="accountant">
+                        Accountant
+                    </option>
+
+                    <option value="officer">
+                        Officer
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Joining Date -->
+            <div>
+
+                <label for="joiningDate">
+                    Joining Date
+                </label>
+
+                <input
+                    type="date"
+                    id="joiningDate"
+                    name="joiningDate"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Salary -->
+            <div>
+
+                <label for="employeeSalary">
+                    Salary
+                </label>
+
+                <input
+                    type="number"
+                    id="employeeSalary"
+                    name="salary"
+                    placeholder="Enter salary"
+                    min="0"
+                    step="0.01"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Status -->
+            <div>
+
+                <label for="employeeStatus">
+                    Status
+                </label>
+
+                <select
+                    id="employeeStatus"
+                    name="status"
+                    required
+                >
+
+                    <option value="active">
+                        Active
+                    </option>
+
+                    <option value="inactive">
+                        Inactive
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Employee Address -->
+            <div>
+
+                <label for="employeeAddress">
+                    Address
+                </label>
+
+                <textarea
+                    id="employeeAddress"
+                    name="address"
+                    rows="3"
+                    placeholder="Enter employee address"
+                ></textarea>
+
+            </div>
+
+
+            <!-- Form Message -->
+            <div
+                id="employeeFormMessage"
+                role="alert"
+                aria-live="polite"
+            ></div>
+
+
+            <!-- Form Actions -->
+            <footer>
+
+                <button
+                    type="button"
+                    id="cancelEmployeeForm"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    id="saveEmployeeButton"
+                >
+                    Save Employee
+                </button>
+
+            </footer>
+
+        </form>
+
+    </dialog>
+
+
+    <!-- =========================================
+         EMPLOYEE PROFILE MODAL
+    ========================================== -->
+
+    <dialog id="employeeProfileModal">
+
+        <header>
+
+            <div>
+
+                <span>
+                    Employee Profile
+                </span>
+
+                <h2 id="profileEmployeeName">
+                    Employee Name
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="closeEmployeeProfile"
+                aria-label="Close employee profile"
+            >
+                Close
+            </button>
+
+        </header>
+
+
+        <div id="employeeProfileContent">
+
+            <!-- Dynamic employee profile -->
+
+        </div>
+
+
+        <footer>
+
+            <button
+                type="button"
+                id="editProfileEmployee"
+            >
+                Edit Employee
+            </button>
+
+        </footer>
+
+    </dialog>
+
+
+    <!-- =========================================
+         DELETE CONFIRMATION MODAL
+    ========================================== -->
+
+    <dialog id="deleteEmployeeModal">
+
+        <header>
+
+            <h2>
+                Delete Employee
+            </h2>
+
+        </header>
+
+
+        <div>
+
+            <p>
+                Are you sure you want to delete this employee?
+            </p>
+
+            <p>
+                This action cannot be undone.
+            </p>
+
+        </div>
+
+
+        <footer>
+
+            <button
+                type="button"
+                id="cancelDeleteEmployee"
+            >
+                Cancel
+            </button>
+
+            <button
+                type="button"
+                id="confirmDeleteEmployee"
+            >
+                Delete Employee
+            </button>
+
+        </footer>
+
+    </dialog>
+
+
+    <!-- =========================================
+         GLOBAL UI ELEMENTS
+    ========================================== -->
+
+    <!-- Loading -->
+    <div
+        id="loadingOverlay"
+        hidden
+        aria-hidden="true"
+    >
+
+        <div>
+
+            <span>
+                Loading...
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- Toast -->
+    <div
+        id="toastContainer"
+        aria-live="polite"
+        aria-atomic="true"
+    >
+
+        <!-- Toast messages -->
+
+    </div>
+
+
+    <!-- Notification Modal -->
+    <dialog id="notificationModal">
+
+        <header>
+
+            <h2>
+                Notifications
+            </h2>
+
+            <button
+                type="button"
+                id="closeNotificationModal"
+            >
+                Close
+            </button>
+
+        </header>
+
+
+        <div id="notificationModalContent">
+
+            <!-- Dynamic notifications -->
+
+        </div>
+
+    </dialog>
+
+
+    <!-- User Menu -->
+    <dialog id="userMenuModal">
+
+        <header>
+
+            <h2>
+                My Account
+            </h2>
+
+            <button
+                type="button"
+                id="closeUserMenuModal"
+            >
+                Close
+            </button>
+
+        </header>
+
+
+        <div>
+
+            <p>
+                <strong>Name:</strong>
+
+                <span id="currentUserName">
+                    Admin User
+                </span>
+            </p>
+
+
+            <p>
+                <strong>Role:</strong>
+
+                <span id="currentUserRole">
+                    Administrator
+                </span>
+            </p>
+
+
+            <button
+                type="button"
+                id="modalLogoutButton"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </dialog>
+
+
+    <!-- =========================================
+         JAVASCRIPT WILL BE ADDED LATER
+    ========================================== -->
+
+</body>
+</html>

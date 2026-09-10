@@ -1,0 +1,1763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Finance | NEXORA ERP</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+
+    <!-- ================================
+         APP WRAPPER
+    ================================= -->
+    <div class="app-wrapper">
+
+        <!-- ================================
+             SIDEBAR
+        ================================= -->
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-header">
+                <a href="dashboard.html" class="logo">
+                    <span class="logo-icon">N</span>
+                    <span class="logo-text">NEXORA</span>
+                </a>
+
+                <button
+                    type="button"
+                    class="sidebar-close"
+                    id="sidebarClose"
+                    aria-label="Close sidebar"
+                >
+                    &times;
+                </button>
+            </div>
+
+
+            <!-- Navigation -->
+            <nav class="sidebar-nav">
+
+                <div class="nav-section">
+                    <p class="nav-section-title">MAIN</p>
+
+                    <a href="dashboard.html" class="nav-link">
+                        <span class="nav-icon">▦</span>
+                        <span>Dashboard</span>
+                    </a>
+
+                    <a href="employees.html" class="nav-link">
+                        <span class="nav-icon">👥</span>
+                        <span>Employees</span>
+                    </a>
+
+                    <a href="customers.html" class="nav-link">
+                        <span class="nav-icon">♙</span>
+                        <span>Customers</span>
+                    </a>
+
+                    <a href="products.html" class="nav-link">
+                        <span class="nav-icon">▣</span>
+                        <span>Products</span>
+                    </a>
+
+                    <a href="inventory.html" class="nav-link">
+                        <span class="nav-icon">◫</span>
+                        <span>Inventory</span>
+                    </a>
+
+                    <a href="sales.html" class="nav-link">
+                        <span class="nav-icon">↗</span>
+                        <span>Sales</span>
+                    </a>
+
+                    <a href="invoice.html" class="nav-link">
+                        <span class="nav-icon">▤</span>
+                        <span>Invoices</span>
+                    </a>
+
+                    <a href="finance.html" class="nav-link active" aria-current="page">
+                        <span class="nav-icon">$</span>
+                        <span>Finance</span>
+                    </a>
+
+                    <a href="reports.html" class="nav-link">
+                        <span class="nav-icon">▥</span>
+                        <span>Reports</span>
+                    </a>
+                </div>
+
+
+                <div class="nav-section">
+
+                    <p class="nav-section-title">SYSTEM</p>
+
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">⚙</span>
+                        <span>Settings</span>
+                    </a>
+
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon">?</span>
+                        <span>Help &amp; Support</span>
+                    </a>
+
+                </div>
+
+            </nav>
+
+
+            <!-- Sidebar Footer -->
+            <div class="sidebar-footer">
+
+                <div class="sidebar-user-mini">
+
+                    <div class="user-avatar">
+                        <span>RA</span>
+                    </div>
+
+                    <div class="sidebar-user-info">
+                        <strong>Admin User</strong>
+                        <span>Administrator</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ================================
+             MAIN AREA
+        ================================= -->
+        <div class="main-wrapper">
+
+            <!-- ================================
+                 TOP NAVBAR
+            ================================= -->
+            <header class="top-navbar">
+
+                <div class="navbar-left">
+
+                    <button
+                        type="button"
+                        class="sidebar-toggle"
+                        id="sidebarToggle"
+                        aria-label="Toggle sidebar"
+                    >
+                        ☰
+                    </button>
+
+                    <div class="global-search">
+
+                        <span class="search-icon">⌕</span>
+
+                        <input
+                            type="search"
+                            id="globalSearch"
+                            placeholder="Search anything..."
+                            autocomplete="off"
+                        >
+
+                        <span class="search-shortcut">Ctrl + K</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="navbar-right">
+
+                    <!-- Notifications -->
+                    <button
+                        type="button"
+                        class="navbar-icon-btn notification-btn"
+                        id="notificationBtn"
+                        aria-label="Notifications"
+                    >
+                        🔔
+                        <span class="notification-badge" id="notificationBadge">
+                            4
+                        </span>
+                    </button>
+
+
+                    <!-- Theme Toggle -->
+                    <button
+                        type="button"
+                        class="navbar-icon-btn theme-toggle"
+                        id="themeToggle"
+                        aria-label="Toggle theme"
+                    >
+                        ☾
+                    </button>
+
+
+                    <!-- User Menu -->
+                    <div class="user-menu-wrapper">
+
+                        <button
+                            type="button"
+                            class="user-menu-btn"
+                            id="userMenuBtn"
+                        >
+
+                            <span class="user-avatar small">
+                                RA
+                            </span>
+
+                            <span class="user-menu-text">
+                                <strong>Admin User</strong>
+                                <small>Administrator</small>
+                            </span>
+
+                            <span class="dropdown-arrow">⌄</span>
+
+                        </button>
+
+
+                        <!-- User Dropdown -->
+                        <div class="user-dropdown" id="userDropdown">
+
+                            <a href="#" class="dropdown-item">
+                                <span>👤</span>
+                                <span>My Profile</span>
+                            </a>
+
+                            <a href="#" class="dropdown-item">
+                                <span>⚙</span>
+                                <span>Settings</span>
+                            </a>
+
+                            <div class="dropdown-divider"></div>
+
+                            <button
+                                type="button"
+                                class="dropdown-item logout-btn"
+                                id="logoutBtn"
+                            >
+                                <span>↪</span>
+                                <span>Logout</span>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- ================================
+                 PAGE CONTENT
+            ================================= -->
+            <main class="main-content">
+
+                <!-- Page Header -->
+                <div class="page-header">
+
+                    <div class="page-header-left">
+
+                        <div class="breadcrumb">
+                            <a href="dashboard.html">Dashboard</a>
+                            <span>/</span>
+                            <span>Finance</span>
+                        </div>
+
+                        <h1>Finance</h1>
+
+                        <p>
+                            Track income, expenses, profit and financial transactions.
+                        </p>
+
+                    </div>
+
+
+                    <div class="page-header-actions">
+
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            id="exportFinanceBtn"
+                        >
+                            ⇩ Export Report
+                        </button>
+
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            id="addTransactionBtn"
+                        >
+                            + Add Transaction
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================================
+                     FINANCE STATS
+                ================================= -->
+                <section class="stats-grid finance-stats">
+
+                    <!-- Total Income -->
+                    <article class="stat-card">
+
+                        <div class="stat-card-header">
+                            <div class="stat-icon income-icon">
+                                ↑
+                            </div>
+
+                            <span class="stat-period">
+                                This Month
+                            </span>
+                        </div>
+
+                        <div class="stat-card-body">
+                            <h2 id="totalIncome">
+                                $0.00
+                            </h2>
+
+                            <p class="stat-label">
+                                Total Income
+                            </p>
+
+                            <span class="stat-change positive">
+                                ↑ 12.5% from last month
+                            </span>
+                        </div>
+
+                    </article>
+
+
+                    <!-- Total Expenses -->
+                    <article class="stat-card">
+
+                        <div class="stat-card-header">
+                            <div class="stat-icon expense-icon">
+                                ↓
+                            </div>
+
+                            <span class="stat-period">
+                                This Month
+                            </span>
+                        </div>
+
+                        <div class="stat-card-body">
+                            <h2 id="totalExpenses">
+                                $0.00
+                            </h2>
+
+                            <p class="stat-label">
+                                Total Expenses
+                            </p>
+
+                            <span class="stat-change negative">
+                                ↑ 5.8% from last month
+                            </span>
+                        </div>
+
+                    </article>
+
+
+                    <!-- Net Profit -->
+                    <article class="stat-card">
+
+                        <div class="stat-card-header">
+                            <div class="stat-icon profit-icon">
+                                $
+                            </div>
+
+                            <span class="stat-period">
+                                This Month
+                            </span>
+                        </div>
+
+                        <div class="stat-card-body">
+                            <h2 id="netProfit">
+                                $0.00
+                            </h2>
+
+                            <p class="stat-label">
+                                Net Profit
+                            </p>
+
+                            <span class="stat-change positive">
+                                ↑ 9.2% from last month
+                            </span>
+                        </div>
+
+                    </article>
+
+
+                    <!-- Pending / Due -->
+                    <article class="stat-card">
+
+                        <div class="stat-card-header">
+                            <div class="stat-icon pending-icon">
+                                ◷
+                            </div>
+
+                            <span class="stat-period">
+                                Current
+                            </span>
+                        </div>
+
+                        <div class="stat-card-body">
+                            <h2 id="pendingAmount">
+                                $0.00
+                            </h2>
+
+                            <p class="stat-label">
+                                Pending Amount
+                            </p>
+
+                            <span class="stat-change">
+                                From unpaid transactions
+                            </span>
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+                <!-- ================================
+                     FINANCIAL OVERVIEW
+                ================================= -->
+                <section class="dashboard-grid finance-overview-grid">
+
+                    <!-- Income vs Expense Chart -->
+                    <div class="content-card chart-card large">
+
+                        <div class="content-card-header">
+
+                            <div>
+                                <h2>Income vs Expenses</h2>
+                                <p>
+                                    Monthly financial performance overview
+                                </p>
+                            </div>
+
+                            <select
+                                id="financeChartPeriod"
+                                class="form-select small"
+                            >
+                                <option value="6">Last 6 Months</option>
+                                <option value="12" selected>Last 12 Months</option>
+                                <option value="24">Last 24 Months</option>
+                            </select>
+
+                        </div>
+
+                        <div class="chart-container">
+
+                            <canvas
+                                id="incomeExpenseChart"
+                                aria-label="Income and expense chart"
+                            ></canvas>
+
+                            <div
+                                class="chart-empty-state"
+                                id="incomeExpenseChartEmpty"
+                                hidden
+                            >
+                                <span>◌</span>
+                                <p>No financial data available.</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Profit Summary -->
+                    <div class="content-card">
+
+                        <div class="content-card-header">
+
+                            <div>
+                                <h2>Profit Summary</h2>
+                                <p>Current financial position</p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="profit-summary">
+
+                            <div class="profit-item">
+
+                                <div class="profit-item-info">
+                                    <span class="profit-dot income"></span>
+                                    <span>Income</span>
+                                </div>
+
+                                <strong id="summaryIncome">
+                                    $0.00
+                                </strong>
+
+                            </div>
+
+
+                            <div class="profit-item">
+
+                                <div class="profit-item-info">
+                                    <span class="profit-dot expense"></span>
+                                    <span>Expenses</span>
+                                </div>
+
+                                <strong id="summaryExpenses">
+                                    $0.00
+                                </strong>
+
+                            </div>
+
+
+                            <div class="profit-divider"></div>
+
+
+                            <div class="profit-item total">
+
+                                <div class="profit-item-info">
+                                    <span>Net Profit</span>
+                                </div>
+
+                                <strong id="summaryProfit">
+                                    $0.00
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Profit Margin -->
+                        <div class="profit-margin-section">
+
+                            <div class="progress-header">
+                                <span>Profit Margin</span>
+                                <strong id="profitMargin">
+                                    0%
+                                </strong>
+                            </div>
+
+                            <div class="progress-bar">
+                                <div
+                                    class="progress-fill"
+                                    id="profitMarginBar"
+                                    style="width: 0%;"
+                                ></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ================================
+                     EXPENSE CATEGORY CHART
+                ================================= -->
+                <section class="dashboard-grid finance-chart-grid">
+
+                    <!-- Expense Breakdown -->
+                    <div class="content-card chart-card">
+
+                        <div class="content-card-header">
+
+                            <div>
+                                <h2>Expense Breakdown</h2>
+                                <p>Expenses by category</p>
+                            </div>
+
+                            <select
+                                id="expenseChartPeriod"
+                                class="form-select small"
+                            >
+                                <option value="month" selected>
+                                    This Month
+                                </option>
+
+                                <option value="quarter">
+                                    This Quarter
+                                </option>
+
+                                <option value="year">
+                                    This Year
+                                </option>
+                            </select>
+
+                        </div>
+
+                        <div class="chart-container doughnut-chart-container">
+
+                            <canvas
+                                id="expenseCategoryChart"
+                                aria-label="Expense category chart"
+                            ></canvas>
+
+                            <div
+                                class="chart-empty-state"
+                                id="expenseCategoryChartEmpty"
+                                hidden
+                            >
+                                <span>◌</span>
+                                <p>No expense data available.</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Income Breakdown -->
+                    <div class="content-card chart-card">
+
+                        <div class="content-card-header">
+
+                            <div>
+                                <h2>Income Sources</h2>
+                                <p>Income distribution by source</p>
+                            </div>
+
+                        </div>
+
+                        <div class="chart-container doughnut-chart-container">
+
+                            <canvas
+                                id="incomeSourceChart"
+                                aria-label="Income source chart"
+                            ></canvas>
+
+                            <div
+                                class="chart-empty-state"
+                                id="incomeSourceChartEmpty"
+                                hidden
+                            >
+                                <span>◌</span>
+                                <p>No income data available.</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ================================
+                     TRANSACTIONS
+                ================================= -->
+                <section class="content-card transactions-card">
+
+                    <div class="content-card-header">
+
+                        <div>
+                            <h2>Financial Transactions</h2>
+
+                            <p>
+                                Manage all income and expense transactions.
+                            </p>
+                        </div>
+
+                        <button
+                            type="button"
+                            class="btn btn-primary btn-sm"
+                            id="addTransactionBtnTop"
+                        >
+                            + Add Transaction
+                        </button>
+
+                    </div>
+
+
+                    <!-- Transaction Toolbar -->
+                    <div class="table-toolbar">
+
+                        <div class="toolbar-left">
+
+                            <!-- Search -->
+                            <div class="table-search">
+
+                                <span class="search-icon">⌕</span>
+
+                                <input
+                                    type="search"
+                                    id="transactionSearch"
+                                    placeholder="Search transactions..."
+                                >
+
+                            </div>
+
+
+                            <!-- Type Filter -->
+                            <select
+                                id="transactionTypeFilter"
+                                class="form-select"
+                            >
+                                <option value="">All Types</option>
+                                <option value="income">Income</option>
+                                <option value="expense">Expense</option>
+                            </select>
+
+
+                            <!-- Category Filter -->
+                            <select
+                                id="transactionCategoryFilter"
+                                class="form-select"
+                            >
+                                <option value="">All Categories</option>
+                                <option value="sales">Sales</option>
+                                <option value="salary">Salary</option>
+                                <option value="rent">Rent</option>
+                                <option value="utilities">Utilities</option>
+                                <option value="supplies">Supplies</option>
+                                <option value="marketing">Marketing</option>
+                                <option value="transport">Transport</option>
+                                <option value="maintenance">Maintenance</option>
+                                <option value="other">Other</option>
+                            </select>
+
+
+                            <!-- Payment Method -->
+                            <select
+                                id="paymentMethodFilter"
+                                class="form-select"
+                            >
+                                <option value="">All Payment Methods</option>
+                                <option value="cash">Cash</option>
+                                <option value="card">Card</option>
+                                <option value="bank">Bank Transfer</option>
+                                <option value="mobile">Mobile Banking</option>
+                            </select>
+
+                        </div>
+
+
+                        <div class="toolbar-right">
+
+                            <!-- Date Filter -->
+                            <input
+                                type="date"
+                                id="transactionDateFilter"
+                                class="form-input"
+                                aria-label="Filter by date"
+                            >
+
+
+                            <!-- Sort -->
+                            <select
+                                id="transactionSort"
+                                class="form-select"
+                            >
+                                <option value="newest">
+                                    Newest First
+                                </option>
+
+                                <option value="oldest">
+                                    Oldest First
+                                </option>
+
+                                <option value="amount-high">
+                                    Amount: High to Low
+                                </option>
+
+                                <option value="amount-low">
+                                    Amount: Low to High
+                                </option>
+
+                                <option value="name-az">
+                                    Name: A-Z
+                                </option>
+
+                                <option value="name-za">
+                                    Name: Z-A
+                                </option>
+                            </select>
+
+
+                            <!-- Reset -->
+                            <button
+                                type="button"
+                                class="btn btn-secondary"
+                                id="resetTransactionFilters"
+                            >
+                                Reset
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Bulk Actions -->
+                    <div
+                        class="bulk-actions"
+                        id="transactionBulkActions"
+                        hidden
+                    >
+
+                        <span>
+                            <strong id="selectedTransactionCount">0</strong>
+                            transactions selected
+                        </span>
+
+                        <div class="bulk-action-buttons">
+
+                            <button
+                                type="button"
+                                class="btn btn-secondary btn-sm"
+                                id="exportSelectedTransactions"
+                            >
+                                Export
+                            </button>
+
+                            <button
+                                type="button"
+                                class="btn btn-danger btn-sm"
+                                id="deleteSelectedTransactions"
+                            >
+                                Delete
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Transactions Table -->
+                    <div class="table-responsive">
+
+                        <table class="data-table" id="transactionsTable">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th class="checkbox-column">
+                                        <input
+                                            type="checkbox"
+                                            id="selectAllTransactions"
+                                            aria-label="Select all transactions"
+                                        >
+                                    </th>
+
+                                    <th>
+                                        Transaction
+                                    </th>
+
+                                    <th>
+                                        Reference
+                                    </th>
+
+                                    <th>
+                                        Date
+                                    </th>
+
+                                    <th>
+                                        Type
+                                    </th>
+
+                                    <th>
+                                        Category
+                                    </th>
+
+                                    <th>
+                                        Payment Method
+                                    </th>
+
+                                    <th>
+                                        Amount
+                                    </th>
+
+                                    <th>
+                                        Status
+                                    </th>
+
+                                    <th>
+                                        Actions
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="transactionsTableBody">
+
+                                <!-- Dynamic rows will be inserted by JavaScript -->
+
+                            </tbody>
+
+                        </table>
+
+
+                        <!-- Empty State -->
+                        <div
+                            class="table-empty-state"
+                            id="transactionsEmptyState"
+                            hidden
+                        >
+
+                            <div class="empty-icon">
+                                $
+                            </div>
+
+                            <h3>No transactions found</h3>
+
+                            <p>
+                                There are no financial transactions matching
+                                your current filters.
+                            </p>
+
+                            <button
+                                type="button"
+                                class="btn btn-primary"
+                                id="emptyAddTransactionBtn"
+                            >
+                                + Add Transaction
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Pagination -->
+                    <div class="table-footer">
+
+                        <div class="pagination-info">
+                            Showing
+                            <strong id="transactionStart">1</strong>
+                            -
+                            <strong id="transactionEnd">10</strong>
+                            of
+                            <strong id="transactionTotal">0</strong>
+                            transactions
+                        </div>
+
+
+                        <div class="pagination" id="transactionPagination">
+
+                            <button
+                                type="button"
+                                class="pagination-btn"
+                                id="transactionPrevPage"
+                                disabled
+                                aria-label="Previous page"
+                            >
+                                ‹
+                            </button>
+
+                            <button
+                                type="button"
+                                class="pagination-btn active"
+                                data-page="1"
+                            >
+                                1
+                            </button>
+
+                            <button
+                                type="button"
+                                class="pagination-btn"
+                                id="transactionNextPage"
+                                aria-label="Next page"
+                            >
+                                ›
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ================================
+                     RECENT FINANCIAL ACTIVITY
+                ================================= -->
+                <section class="content-card">
+
+                    <div class="content-card-header">
+
+                        <div>
+                            <h2>Recent Financial Activity</h2>
+                            <p>Latest changes in your finance records.</p>
+                        </div>
+
+                        <a
+                            href="#transactionsTable"
+                            class="text-link"
+                        >
+                            View All
+                        </a>
+
+                    </div>
+
+
+                    <div class="activity-list" id="financeActivityList">
+
+                        <!-- Dynamic activities will be inserted here -->
+
+                    </div>
+
+                </section>
+
+            </main>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================
+         ADD / EDIT TRANSACTION MODAL
+    ================================= -->
+    <div
+        class="modal-overlay"
+        id="transactionModal"
+        hidden
+    >
+
+        <div
+            class="modal modal-lg"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="transactionModalTitle"
+        >
+
+            <div class="modal-header">
+
+                <div>
+                    <h2 id="transactionModalTitle">
+                        Add Transaction
+                    </h2>
+
+                    <p>
+                        Add income or expense information.
+                    </p>
+                </div>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="transactionModalClose"
+                    aria-label="Close modal"
+                >
+                    &times;
+                </button>
+
+            </div>
+
+
+            <form id="transactionForm">
+
+                <div class="modal-body">
+
+                    <!-- Transaction Type -->
+                    <div class="form-group">
+
+                        <label for="transactionType">
+                            Transaction Type
+                            <span class="required">*</span>
+                        </label>
+
+                        <div class="transaction-type-selector">
+
+                            <label class="transaction-type-option income-option">
+
+                                <input
+                                    type="radio"
+                                    name="transactionType"
+                                    id="transactionIncome"
+                                    value="income"
+                                    checked
+                                >
+
+                                <span>
+                                    <strong>Income</strong>
+                                    <small>Money received</small>
+                                </span>
+
+                            </label>
+
+
+                            <label class="transaction-type-option expense-option">
+
+                                <input
+                                    type="radio"
+                                    name="transactionType"
+                                    id="transactionExpense"
+                                    value="expense"
+                                >
+
+                                <span>
+                                    <strong>Expense</strong>
+                                    <small>Money spent</small>
+                                </span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid form-grid-2">
+
+                        <!-- Date -->
+                        <div class="form-group">
+
+                            <label for="transactionDate">
+                                Date
+                                <span class="required">*</span>
+                            </label>
+
+                            <input
+                                type="date"
+                                id="transactionDate"
+                                name="transactionDate"
+                                class="form-input"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- Amount -->
+                        <div class="form-group">
+
+                            <label for="transactionAmount">
+                                Amount
+                                <span class="required">*</span>
+                            </label>
+
+                            <div class="input-with-prefix">
+
+                                <span class="input-prefix">$</span>
+
+                                <input
+                                    type="number"
+                                    id="transactionAmount"
+                                    name="transactionAmount"
+                                    class="form-input"
+                                    placeholder="0.00"
+                                    min="0"
+                                    step="0.01"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Category -->
+                        <div class="form-group">
+
+                            <label for="transactionCategory">
+                                Category
+                                <span class="required">*</span>
+                            </label>
+
+                            <select
+                                id="transactionCategory"
+                                name="transactionCategory"
+                                class="form-select"
+                                required
+                            >
+                                <option value="">
+                                    Select category
+                                </option>
+
+                                <option value="sales">Sales</option>
+                                <option value="salary">Salary</option>
+                                <option value="rent">Rent</option>
+                                <option value="utilities">Utilities</option>
+                                <option value="supplies">Supplies</option>
+                                <option value="marketing">Marketing</option>
+                                <option value="transport">Transport</option>
+                                <option value="maintenance">Maintenance</option>
+                                <option value="other">Other</option>
+                            </select>
+
+                        </div>
+
+
+                        <!-- Payment Method -->
+                        <div class="form-group">
+
+                            <label for="transactionPaymentMethod">
+                                Payment Method
+                                <span class="required">*</span>
+                            </label>
+
+                            <select
+                                id="transactionPaymentMethod"
+                                name="transactionPaymentMethod"
+                                class="form-select"
+                                required
+                            >
+                                <option value="">
+                                    Select payment method
+                                </option>
+
+                                <option value="cash">Cash</option>
+                                <option value="card">Card</option>
+                                <option value="bank">
+                                    Bank Transfer
+                                </option>
+
+                                <option value="mobile">
+                                    Mobile Banking
+                                </option>
+                            </select>
+
+                        </div>
+
+
+                        <!-- Reference -->
+                        <div class="form-group">
+
+                            <label for="transactionReference">
+                                Reference / Invoice No.
+                            </label>
+
+                            <input
+                                type="text"
+                                id="transactionReference"
+                                name="transactionReference"
+                                class="form-input"
+                                placeholder="e.g. INV-2026-001"
+                            >
+
+                        </div>
+
+
+                        <!-- Status -->
+                        <div class="form-group">
+
+                            <label for="transactionStatus">
+                                Status
+                            </label>
+
+                            <select
+                                id="transactionStatus"
+                                name="transactionStatus"
+                                class="form-select"
+                            >
+                                <option value="completed">
+                                    Completed
+                                </option>
+
+                                <option value="pending">
+                                    Pending
+                                </option>
+
+                                <option value="cancelled">
+                                    Cancelled
+                                </option>
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Description -->
+                    <div class="form-group">
+
+                        <label for="transactionDescription">
+                            Description / Notes
+                        </label>
+
+                        <textarea
+                            id="transactionDescription"
+                            name="transactionDescription"
+                            class="form-textarea"
+                            rows="4"
+                            placeholder="Write additional details about this transaction..."
+                        ></textarea>
+
+                    </div>
+
+
+                    <!-- Form Message -->
+                    <div
+                        class="form-message"
+                        id="transactionFormMessage"
+                        role="alert"
+                        hidden
+                    ></div>
+
+                </div>
+
+
+                <div class="modal-footer">
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="transactionCancelBtn"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                        id="saveTransactionBtn"
+                    >
+                        Save Transaction
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================
+         TRANSACTION DETAILS MODAL
+    ================================= -->
+    <div
+        class="modal-overlay"
+        id="transactionDetailsModal"
+        hidden
+    >
+
+        <div
+            class="modal modal-lg"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="transactionDetailsTitle"
+        >
+
+            <div class="modal-header">
+
+                <div>
+                    <h2 id="transactionDetailsTitle">
+                        Transaction Details
+                    </h2>
+
+                    <p>
+                        Complete information about this transaction.
+                    </p>
+                </div>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="transactionDetailsClose"
+                    aria-label="Close modal"
+                >
+                    &times;
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <div class="transaction-details-header">
+
+                    <div class="transaction-details-icon" id="detailsTypeIcon">
+                        $
+                    </div>
+
+                    <div>
+
+                        <h3 id="detailsTransactionName">
+                            Transaction Name
+                        </h3>
+
+                        <p id="detailsTransactionReference">
+                            Reference: —
+                        </p>
+
+                    </div>
+
+                    <span
+                        class="status-badge"
+                        id="detailsTransactionStatus"
+                    >
+                        Completed
+                    </span>
+
+                </div>
+
+
+                <div class="details-grid">
+
+                    <div class="detail-item">
+                        <span class="detail-label">Transaction Type</span>
+                        <strong id="detailsType">Income</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-label">Amount</span>
+                        <strong id="detailsAmount">$0.00</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-label">Date</span>
+                        <strong id="detailsDate">—</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-label">Category</span>
+                        <strong id="detailsCategory">—</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-label">Payment Method</span>
+                        <strong id="detailsPaymentMethod">—</strong>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-label">Created By</span>
+                        <strong id="detailsCreatedBy">Admin User</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="detail-description">
+
+                    <span class="detail-label">
+                        Description
+                    </span>
+
+                    <p id="detailsDescription">
+                        No description available.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    id="detailsCloseBtn"
+                >
+                    Close
+                </button>
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    id="detailsEditBtn"
+                >
+                    Edit
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================
+         DELETE TRANSACTION MODAL
+    ================================= -->
+    <div
+        class="modal-overlay"
+        id="deleteTransactionModal"
+        hidden
+    >
+
+        <div
+            class="modal modal-sm"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="deleteTransactionTitle"
+        >
+
+            <div class="modal-header">
+
+                <h2 id="deleteTransactionTitle">
+                    Delete Transaction
+                </h2>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="deleteTransactionClose"
+                    aria-label="Close modal"
+                >
+                    &times;
+                </button>
+
+            </div>
+
+
+            <div class="modal-body confirmation-content">
+
+                <div class="confirmation-icon danger">
+                    !
+                </div>
+
+                <h3>
+                    Are you sure?
+                </h3>
+
+                <p>
+                    This transaction will be permanently deleted.
+                    This action cannot be undone.
+                </p>
+
+                <input
+                    type="hidden"
+                    id="deleteTransactionId"
+                >
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    id="cancelDeleteTransaction"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="button"
+                    class="btn btn-danger"
+                    id="confirmDeleteTransaction"
+                >
+                    Delete Transaction
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================
+         NOTIFICATION MODAL
+    ================================= -->
+    <div
+        class="modal-overlay"
+        id="notificationModal"
+        hidden
+    >
+
+        <div
+            class="modal modal-md notification-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="notificationModalTitle"
+        >
+
+            <div class="modal-header">
+
+                <div>
+                    <h2 id="notificationModalTitle">
+                        Notifications
+                    </h2>
+
+                    <p>
+                        Recent alerts and updates.
+                    </p>
+                </div>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="notificationModalClose"
+                    aria-label="Close notifications"
+                >
+                    &times;
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <div
+                    class="notification-list"
+                    id="notificationList"
+                >
+
+                    <!-- Notifications will be rendered by JS -->
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    id="markNotificationsRead"
+                >
+                    Mark All as Read
+                </button>
+
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="closeNotificationsBtn"
+                >
+                    Close
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================
+         LOGOUT CONFIRMATION MODAL
+    ================================= -->
+    <div
+        class="modal-overlay"
+        id="logoutModal"
+        hidden
+    >
+
+        <div
+            class="modal modal-sm"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="logoutModalTitle"
+        >
+
+            <div class="modal-header">
+
+                <h2 id="logoutModalTitle">
+                    Logout
+                </h2>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="logoutModalClose"
+                    aria-label="Close modal"
+                >
+                    &times;
+                </button>
+
+            </div>
+
+
+            <div class="modal-body confirmation-content">
+
+                <div class="confirmation-icon">
+                    ↪
+                </div>
+
+                <h3>
+                    Are you sure you want to logout?
+                </h3>
+
+                <p>
+                    You will be redirected to the login page.
+                </p>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    id="cancelLogout"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="button"
+                    class="btn btn-danger"
+                    id="confirmLogout"
+                >
+                    Logout
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================
+         GLOBAL LOADING OVERLAY
+    ================================= -->
+    <div
+        class="loading-overlay"
+        id="loadingOverlay"
+        hidden
+    >
+
+        <div class="loading-spinner"></div>
+
+        <p>
+            Processing...
+        </p>
+
+    </div>
+
+
+    <!-- ================================
+         TOAST CONTAINER
+    ================================= -->
+    <div
+        class="toast-container"
+        id="toastContainer"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+
+    <!-- ================================
+         SCRIPTS
+    ================================= -->
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Main Application -->
+    <script
+        type="module"
+        src="../js/app.js"
+    ></script>
+
+    <!-- Finance Page -->
+    <script
+        type="module"
+        src="../js/finance.js"
+    ></script>
+
+</body>
+</html>

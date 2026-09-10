@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="NEXORA ERP Smart Business Management Dashboard"
+    >
+
+    <title>Dashboard | NEXORA ERP</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         NEXORA ERP DASHBOARD
+    ========================================== -->
+
+    <!-- Main Application Container -->
+    <div id="app">
+
+        <!-- =====================================
+             SIDEBAR
+        ====================================== -->
+
+        <aside id="sidebar">
+
+            <!-- Brand -->
+            <div>
+
+                <a href="dashboard.html">
+
+                    <h1>NEXORA ERP</h1>
+
+                    <span>
+                        Smart Business Management
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <!-- Navigation -->
+            <nav aria-label="Dashboard Navigation">
+
+                <ul>
+
+                    <!-- Dashboard -->
+                    <li>
+                        <a
+                            href="dashboard.html"
+                            class="active"
+                        >
+                            Dashboard
+                        </a>
+                    </li>
+
+
+                    <!-- Employees -->
+                    <li>
+                        <a href="employees.html">
+                            Employees
+                        </a>
+                    </li>
+
+
+                    <!-- Customers -->
+                    <li>
+                        <a href="customers.html">
+                            Customers
+                        </a>
+                    </li>
+
+
+                    <!-- Products -->
+                    <li>
+                        <a href="products.html">
+                            Products
+                        </a>
+                    </li>
+
+
+                    <!-- Inventory -->
+                    <li>
+                        <a href="inventory.html">
+                            Inventory
+                        </a>
+                    </li>
+
+
+                    <!-- Sales -->
+                    <li>
+                        <a href="sales.html">
+                            Sales
+                        </a>
+                    </li>
+
+
+                    <!-- Invoice -->
+                    <li>
+                        <a href="invoice.html">
+                            Invoices
+                        </a>
+                    </li>
+
+
+                    <!-- Finance -->
+                    <li>
+                        <a href="finance.html">
+                            Finance
+                        </a>
+                    </li>
+
+
+                    <!-- Reports -->
+                    <li>
+                        <a href="reports.html">
+                            Reports & Analytics
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+
+            <!-- Sidebar Bottom -->
+            <div>
+
+                <a href="#">
+                    Settings
+                </a>
+
+                <button
+                    type="button"
+                    id="logoutButton"
+                >
+                    Logout
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =====================================
+             MAIN CONTENT
+        ====================================== -->
+
+        <div id="mainContent">
+
+
+            <!-- =================================
+                 NAVBAR
+            ================================== -->
+
+            <header id="topNavbar">
+
+                <!-- Mobile Menu Button -->
+                <button
+                    type="button"
+                    id="sidebarToggle"
+                    aria-label="Open navigation menu"
+                >
+                    Menu
+                </button>
+
+
+                <!-- Page Title -->
+                <div>
+
+                    <p>
+                        Welcome back
+                    </p>
+
+                    <h2>
+                        Business Dashboard
+                    </h2>
+
+                </div>
+
+
+                <!-- Navbar Actions -->
+                <div>
+
+                    <!-- Search -->
+                    <form
+                        id="globalSearchForm"
+                        role="search"
+                    >
+
+                        <label
+                            for="globalSearch"
+                            hidden
+                        >
+                            Search
+                        </label>
+
+                        <input
+                            type="search"
+                            id="globalSearch"
+                            placeholder="Search..."
+                            autocomplete="off"
+                        >
+
+                        <button type="submit">
+                            Search
+                        </button>
+
+                    </form>
+
+
+                    <!-- Notifications -->
+                    <button
+                        type="button"
+                        id="notificationButton"
+                        aria-label="Open notifications"
+                    >
+                        Notifications
+                    </button>
+
+
+                    <!-- Theme Switcher -->
+                    <button
+                        type="button"
+                        id="themeToggle"
+                        aria-label="Toggle dark and light mode"
+                    >
+                        Theme
+                    </button>
+
+
+                    <!-- User Profile -->
+                    <button
+                        type="button"
+                        id="userMenuButton"
+                        aria-label="Open user menu"
+                    >
+                        Admin
+                    </button>
+
+                </div>
+
+            </header>
+
+
+            <!-- =================================
+                 PAGE CONTENT
+            ================================== -->
+
+            <main id="dashboardMain">
+
+
+                <!-- Page Header -->
+                <section>
+
+                    <div>
+
+                        <p>
+                            Overview
+                        </p>
+
+                        <h1>
+                            Dashboard
+                        </h1>
+
+                        <p>
+                            Monitor your business performance
+                            from one place.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Dashboard Actions -->
+                    <div>
+
+                        <button
+                            type="button"
+                            id="refreshDashboard"
+                        >
+                            Refresh
+                        </button>
+
+                        <button
+                            type="button"
+                            id="exportDashboard"
+                        >
+                            Export
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================
+                     SUMMARY CARDS
+                ================================== -->
+
+                <section aria-label="Business Summary">
+
+                    <!-- Total Revenue -->
+                    <article class="dashboard-card">
+
+                        <div>
+
+                            <span>
+                                Total Revenue
+                            </span>
+
+                            <h3 id="totalRevenue">
+                                $0.00
+                            </h3>
+
+                            <p>
+                                <span id="revenueChange">
+                                    0%
+                                </span>
+                                from last month
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Total Sales -->
+                    <article class="dashboard-card">
+
+                        <div>
+
+                            <span>
+                                Total Sales
+                            </span>
+
+                            <h3 id="totalSales">
+                                0
+                            </h3>
+
+                            <p>
+                                <span id="salesChange">
+                                    0%
+                                </span>
+                                from last month
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Total Customers -->
+                    <article class="dashboard-card">
+
+                        <div>
+
+                            <span>
+                                Total Customers
+                            </span>
+
+                            <h3 id="totalCustomers">
+                                0
+                            </h3>
+
+                            <p>
+                                <span id="customerChange">
+                                    0%
+                                </span>
+                                from last month
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Total Employees -->
+                    <article class="dashboard-card">
+
+                        <div>
+
+                            <span>
+                                Total Employees
+                            </span>
+
+                            <h3 id="totalEmployees">
+                                0
+                            </h3>
+
+                            <p>
+                                <span id="employeeChange">
+                                    0%
+                                </span>
+                                from last month
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Total Products -->
+                    <article class="dashboard-card">
+
+                        <div>
+
+                            <span>
+                                Total Products
+                            </span>
+
+                            <h3 id="totalProducts">
+                                0
+                            </h3>
+
+                            <p>
+                                <span id="productChange">
+                                    0%
+                                </span>
+                                from last month
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+                <!-- =================================
+                     CHARTS SECTION
+                ================================== -->
+
+                <section aria-label="Business Analytics">
+
+
+                    <!-- Sales Overview -->
+                    <article>
+
+                        <header>
+
+                            <div>
+
+                                <span>
+                                    Analytics
+                                </span>
+
+                                <h2>
+                                    Sales Overview
+                                </h2>
+
+                            </div>
+
+
+                            <!-- Chart Filter -->
+                            <div>
+
+                                <label
+                                    for="salesPeriod"
+                                    hidden
+                                >
+                                    Sales Period
+                                </label>
+
+                                <select id="salesPeriod">
+
+                                    <option value="7">
+                                        Last 7 Days
+                                    </option>
+
+                                    <option value="30" selected>
+                                        Last 30 Days
+                                    </option>
+
+                                    <option value="90">
+                                        Last 3 Months
+                                    </option>
+
+                                    <option value="365">
+                                        Last Year
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </header>
+
+
+                        <!-- Sales Chart -->
+                        <div>
+
+                            <canvas
+                                id="salesOverviewChart"
+                                aria-label="Sales overview chart"
+                            ></canvas>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Revenue Chart -->
+                    <article>
+
+                        <header>
+
+                            <div>
+
+                                <span>
+                                    Performance
+                                </span>
+
+                                <h2>
+                                    Revenue Performance
+                                </h2>
+
+                            </div>
+
+                        </header>
+
+
+                        <div>
+
+                            <canvas
+                                id="revenueChart"
+                                aria-label="Revenue chart"
+                            ></canvas>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+                <!-- =================================
+                     MONTHLY PERFORMANCE
+                ================================== -->
+
+                <section>
+
+                    <article>
+
+                        <header>
+
+                            <span>
+                                Monthly Performance
+                            </span>
+
+                            <h2>
+                                Business Performance
+                            </h2>
+
+                        </header>
+
+
+                        <div>
+
+                            <div>
+
+                                <span>
+                                    Revenue
+                                </span>
+
+                                <strong id="monthlyRevenue">
+                                    $0.00
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Expenses
+                                </span>
+
+                                <strong id="monthlyExpenses">
+                                    $0.00
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Profit
+                                </span>
+
+                                <strong id="monthlyProfit">
+                                    $0.00
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Growth
+                                </span>
+
+                                <strong id="monthlyGrowth">
+                                    0%
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+                <!-- =================================
+                     RECENT ORDERS + ACTIVITIES
+                ================================== -->
+
+                <section>
+
+
+                    <!-- Recent Orders -->
+                    <article>
+
+                        <header>
+
+                            <div>
+
+                                <span>
+                                    Sales
+                                </span>
+
+                                <h2>
+                                    Recent Orders
+                                </h2>
+
+                            </div>
+
+                            <a href="sales.html">
+                                View All
+                            </a>
+
+                        </header>
+
+
+                        <div>
+
+                            <table>
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>
+                                            Order ID
+                                        </th>
+
+                                        <th>
+                                            Customer
+                                        </th>
+
+                                        <th>
+                                            Date
+                                        </th>
+
+                                        <th>
+                                            Amount
+                                        </th>
+
+                                        <th>
+                                            Status
+                                        </th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody id="recentOrdersTable">
+
+                                    <!-- Dynamic orders will be inserted here -->
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Recent Activities -->
+                    <article>
+
+                        <header>
+
+                            <div>
+
+                                <span>
+                                    Activity
+                                </span>
+
+                                <h2>
+                                    Recent Activities
+                                </h2>
+
+                            </div>
+
+                        </header>
+
+
+                        <div id="recentActivities">
+
+                            <!-- Dynamic activities will be inserted here -->
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+                <!-- =================================
+                     NOTIFICATIONS
+                ================================== -->
+
+                <section>
+
+                    <article>
+
+                        <header>
+
+                            <div>
+
+                                <span>
+                                    Updates
+                                </span>
+
+                                <h2>
+                                    Notifications
+                                </h2>
+
+                            </div>
+
+                            <button
+                                type="button"
+                                id="markNotificationsRead"
+                            >
+                                Mark all as read
+                            </button>
+
+                        </header>
+
+
+                        <div id="notificationPanel">
+
+                            <!-- Notifications will be rendered here -->
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+            </main>
+
+
+            <!-- =================================
+                 FOOTER
+            ================================== -->
+
+            <footer>
+
+                <p>
+                    &copy; 2026 NEXORA ERP.
+                    All rights reserved.
+                </p>
+
+            </footer>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         MODALS
+    ========================================== -->
+
+    <!-- Notification Modal -->
+    <dialog id="notificationModal">
+
+        <header>
+
+            <h2>
+                Notifications
+            </h2>
+
+            <button
+                type="button"
+                id="closeNotificationModal"
+                aria-label="Close notifications"
+            >
+                Close
+            </button>
+
+        </header>
+
+
+        <div id="notificationModalContent">
+
+            <!-- Dynamic notifications -->
+
+        </div>
+
+    </dialog>
+
+
+    <!-- User Menu -->
+    <dialog id="userMenuModal">
+
+        <header>
+
+            <h2>
+                My Account
+            </h2>
+
+            <button
+                type="button"
+                id="closeUserMenuModal"
+                aria-label="Close user menu"
+            >
+                Close
+            </button>
+
+        </header>
+
+
+        <div>
+
+            <p>
+                <strong>
+                    Name:
+                </strong>
+
+                <span id="currentUserName">
+                    Admin User
+                </span>
+            </p>
+
+
+            <p>
+                <strong>
+                    Role:
+                </strong>
+
+                <span id="currentUserRole">
+                    Administrator
+                </span>
+            </p>
+
+
+            <button
+                type="button"
+                id="modalLogoutButton"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </dialog>
+
+
+    <!-- Confirmation Modal -->
+    <dialog id="confirmationModal">
+
+        <header>
+
+            <h2>
+                Confirm Action
+            </h2>
+
+        </header>
+
+
+        <div>
+
+            <p id="confirmationMessage">
+                Are you sure you want to continue?
+            </p>
+
+        </div>
+
+
+        <footer>
+
+            <button
+                type="button"
+                id="cancelConfirmation"
+            >
+                Cancel
+            </button>
+
+            <button
+                type="button"
+                id="confirmAction"
+            >
+                Confirm
+            </button>
+
+        </footer>
+
+    </dialog>
+
+
+    <!-- Loading Overlay -->
+    <div
+        id="loadingOverlay"
+        hidden
+        aria-hidden="true"
+    >
+
+        <div>
+
+            <span>
+                Loading...
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- Toast Container -->
+    <div
+        id="toastContainer"
+        aria-live="polite"
+        aria-atomic="true"
+    >
+
+        <!-- Toast notifications will appear here -->
+
+    </div>
+
+
+    <!-- =========================================
+         JAVASCRIPT WILL BE ADDED LATER
+    ========================================== -->
+
+</body>
+</html>

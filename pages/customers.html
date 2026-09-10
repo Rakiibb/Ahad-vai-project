@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="NEXORA ERP Customer Management"
+    >
+
+    <link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+
+    <title>Customers | NEXORA ERP</title>
+</head>
+
+<body>
+
+    <!-- =========================================
+         NEXORA ERP - CUSTOMER MANAGEMENT
+    ========================================== -->
+
+    <div id="app">
+
+        <!-- =====================================
+             SIDEBAR
+        ====================================== -->
+
+        <aside id="sidebar">
+
+            <!-- Brand -->
+            <div>
+
+                <a href="dashboard.html">
+
+                    <h1>NEXORA ERP</h1>
+
+                    <span>
+                        Smart Business Management
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <!-- Navigation -->
+            <nav aria-label="Dashboard Navigation">
+
+                <ul>
+
+                    <li>
+                        <a href="dashboard.html">
+                            Dashboard
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="employees.html">
+                            Employees
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="customers.html"
+                            class="active"
+                        >
+                            Customers
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="products.html">
+                            Products
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="inventory.html">
+                            Inventory
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="sales.html">
+                            Sales
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="invoice.html">
+                            Invoices
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="finance.html">
+                            Finance
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="reports.html">
+                            Reports & Analytics
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+
+            <!-- Sidebar Bottom -->
+            <div>
+
+                <a href="#">
+                    Settings
+                </a>
+
+                <button
+                    type="button"
+                    id="logoutButton"
+                >
+                    Logout
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =====================================
+             MAIN CONTENT
+        ====================================== -->
+
+        <div id="mainContent">
+
+
+            <!-- =================================
+                 NAVBAR
+            ================================== -->
+
+            <header id="topNavbar">
+
+                <!-- Mobile Menu -->
+                <button
+                    type="button"
+                    id="sidebarToggle"
+                    aria-label="Open navigation menu"
+                >
+                    Menu
+                </button>
+
+
+                <!-- Page Title -->
+                <div>
+
+                    <p>
+                        Management
+                    </p>
+
+                    <h2>
+                        Customer Management
+                    </h2>
+
+                </div>
+
+
+                <!-- Navbar Actions -->
+                <div>
+
+                    <!-- Global Search -->
+                    <form
+                        id="globalSearchForm"
+                        role="search"
+                    >
+
+                        <label
+                            for="globalSearch"
+                            hidden
+                        >
+                            Search
+                        </label>
+
+                        <input
+                            type="search"
+                            id="globalSearch"
+                            placeholder="Search..."
+                            autocomplete="off"
+                        >
+
+                        <button type="submit">
+                            Search
+                        </button>
+
+                    </form>
+
+
+                    <!-- Notifications -->
+                    <button
+                        type="button"
+                        id="notificationButton"
+                        aria-label="Open notifications"
+                    >
+                        Notifications
+                    </button>
+
+
+                    <!-- Theme -->
+                    <button
+                        type="button"
+                        id="themeToggle"
+                        aria-label="Toggle dark and light mode"
+                    >
+                        Theme
+                    </button>
+
+
+                    <!-- User Menu -->
+                    <button
+                        type="button"
+                        id="userMenuButton"
+                    >
+                        Admin
+                    </button>
+
+                </div>
+
+            </header>
+
+
+            <!-- =================================
+                 PAGE CONTENT
+            ================================== -->
+
+            <main>
+
+
+                <!-- Page Header -->
+                <section>
+
+                    <div>
+
+                        <span>
+                            Management
+                        </span>
+
+                        <h1>
+                            Customers
+                        </h1>
+
+                        <p>
+                            Manage customer information,
+                            relationships and activity.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Add Customer -->
+                    <button
+                        type="button"
+                        id="addCustomerButton"
+                    >
+                        + Add New Customer
+                    </button>
+
+                </section>
+
+
+                <!-- =================================
+                     CUSTOMER STATISTICS
+                ================================== -->
+
+                <section aria-label="Customer Statistics">
+
+                    <!-- Total Customers -->
+                    <article>
+
+                        <span>
+                            Total Customers
+                        </span>
+
+                        <strong id="customerTotalCount">
+                            0
+                        </strong>
+
+                    </article>
+
+
+                    <!-- Active Customers -->
+                    <article>
+
+                        <span>
+                            Active Customers
+                        </span>
+
+                        <strong id="activeCustomerCount">
+                            0
+                        </strong>
+
+                    </article>
+
+
+                    <!-- Inactive Customers -->
+                    <article>
+
+                        <span>
+                            Inactive Customers
+                        </span>
+
+                        <strong id="inactiveCustomerCount">
+                            0
+                        </strong>
+
+                    </article>
+
+
+                    <!-- New Customers -->
+                    <article>
+
+                        <span>
+                            New This Month
+                        </span>
+
+                        <strong id="newCustomerCount">
+                            0
+                        </strong>
+
+                    </article>
+
+                </section>
+
+
+                <!-- =================================
+                     CUSTOMER DIRECTORY
+                ================================== -->
+
+                <section>
+
+                    <header>
+
+                        <div>
+
+                            <span>
+                                Customer Directory
+                            </span>
+
+                            <h2>
+                                All Customers
+                            </h2>
+
+                            <p>
+                                Search, filter and manage customer records.
+                            </p>
+
+                        </div>
+
+                    </header>
+
+
+                    <!-- =================================
+                         SEARCH / FILTER / SORT
+                    ================================== -->
+
+                    <div id="customerToolbar">
+
+
+                        <!-- Search -->
+                        <div>
+
+                            <label for="customerSearch">
+                                Search Customers
+                            </label>
+
+                            <input
+                                type="search"
+                                id="customerSearch"
+                                placeholder="Search by name, email or ID..."
+                                autocomplete="off"
+                            >
+
+                        </div>
+
+
+                        <!-- Status Filter -->
+                        <div>
+
+                            <label for="customerStatusFilter">
+                                Status
+                            </label>
+
+                            <select id="customerStatusFilter">
+
+                                <option value="all">
+                                    All Status
+                                </option>
+
+                                <option value="active">
+                                    Active
+                                </option>
+
+                                <option value="inactive">
+                                    Inactive
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Customer Type -->
+                        <div>
+
+                            <label for="customerTypeFilter">
+                                Customer Type
+                            </label>
+
+                            <select id="customerTypeFilter">
+
+                                <option value="all">
+                                    All Customers
+                                </option>
+
+                                <option value="individual">
+                                    Individual
+                                </option>
+
+                                <option value="business">
+                                    Business
+                                </option>
+
+                                <option value="vip">
+                                    VIP
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Sort -->
+                        <div>
+
+                            <label for="customerSort">
+                                Sort By
+                            </label>
+
+                            <select id="customerSort">
+
+                                <option value="newest">
+                                    Newest First
+                                </option>
+
+                                <option value="oldest">
+                                    Oldest First
+                                </option>
+
+                                <option value="nameAsc">
+                                    Name A-Z
+                                </option>
+
+                                <option value="nameDesc">
+                                    Name Z-A
+                                </option>
+
+                                <option value="spentHigh">
+                                    Highest Spending
+                                </option>
+
+                                <option value="spentLow">
+                                    Lowest Spending
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Reset -->
+                        <button
+                            type="button"
+                            id="resetCustomerFilters"
+                        >
+                            Reset Filters
+                        </button>
+
+                    </div>
+
+
+                    <!-- =================================
+                         CUSTOMER TABLE
+                    ================================== -->
+
+                    <div>
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Customer
+                                    </th>
+
+                                    <th>
+                                        Customer ID
+                                    </th>
+
+                                    <th>
+                                        Email
+                                    </th>
+
+                                    <th>
+                                        Phone
+                                    </th>
+
+                                    <th>
+                                        Customer Type
+                                    </th>
+
+                                    <th>
+                                        Location
+                                    </th>
+
+                                    <th>
+                                        Total Orders
+                                    </th>
+
+                                    <th>
+                                        Total Spent
+                                    </th>
+
+                                    <th>
+                                        Status
+                                    </th>
+
+                                    <th>
+                                        Actions
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="customerTableBody">
+
+                                <!-- Customer rows will be
+                                     dynamically inserted here -->
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+                    <!-- Empty State -->
+                    <div
+                        id="customerEmptyState"
+                        hidden
+                    >
+
+                        <h3>
+                            No Customers Found
+                        </h3>
+
+                        <p>
+                            Try changing your search or filters.
+                        </p>
+
+                    </div>
+
+
+                    <!-- =================================
+                         PAGINATION
+                    ================================== -->
+
+                    <footer id="customerPagination">
+
+                        <div>
+
+                            <p>
+
+                                Showing
+
+                                <strong id="customerStart">
+                                    0
+                                </strong>
+
+                                -
+
+                                <strong id="customerEnd">
+                                    0
+                                </strong>
+
+                                of
+
+                                <strong id="customerTotal">
+                                    0
+                                </strong>
+
+                                customers
+
+                            </p>
+
+                        </div>
+
+
+                        <div>
+
+                            <button
+                                type="button"
+                                id="customerPreviousPage"
+                            >
+                                Previous
+                            </button>
+
+
+                            <div id="customerPageNumbers">
+
+                                <!-- Page numbers dynamically inserted -->
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                id="customerNextPage"
+                            >
+                                Next
+                            </button>
+
+                        </div>
+
+                    </footer>
+
+                </section>
+
+            </main>
+
+
+            <!-- =================================
+                 FOOTER
+            ================================== -->
+
+            <footer>
+
+                <p>
+                    &copy; 2026 NEXORA ERP.
+                    All rights reserved.
+                </p>
+
+            </footer>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         ADD / EDIT CUSTOMER MODAL
+    ========================================== -->
+
+    <dialog id="customerModal">
+
+        <header>
+
+            <div>
+
+                <span>
+                    Customer Management
+                </span>
+
+                <h2 id="customerModalTitle">
+                    Add New Customer
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="closeCustomerModal"
+                aria-label="Close customer form"
+            >
+                Close
+            </button>
+
+        </header>
+
+
+        <!-- Customer Form -->
+        <form id="customerForm">
+
+            <!-- Customer ID -->
+            <div>
+
+                <label for="customerId">
+                    Customer ID
+                </label>
+
+                <input
+                    type="text"
+                    id="customerId"
+                    name="customerId"
+                    placeholder="CUS-001"
+                    required
+                >
+
+                <small
+                    id="customerIdError"
+                    role="alert"
+                ></small>
+
+            </div>
+
+
+            <!-- Full Name -->
+            <div>
+
+                <label for="customerName">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="customerName"
+                    name="name"
+                    placeholder="Enter customer name"
+                    required
+                >
+
+                <small
+                    id="customerNameError"
+                    role="alert"
+                ></small>
+
+            </div>
+
+
+            <!-- Email -->
+            <div>
+
+                <label for="customerEmail">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="customerEmail"
+                    name="email"
+                    placeholder="customer@example.com"
+                    required
+                >
+
+                <small
+                    id="customerEmailError"
+                    role="alert"
+                ></small>
+
+            </div>
+
+
+            <!-- Phone -->
+            <div>
+
+                <label for="customerPhone">
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="customerPhone"
+                    name="phone"
+                    placeholder="Enter phone number"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Customer Type -->
+            <div>
+
+                <label for="customerType">
+                    Customer Type
+                </label>
+
+                <select
+                    id="customerType"
+                    name="customerType"
+                    required
+                >
+
+                    <option value="">
+                        Select Customer Type
+                    </option>
+
+                    <option value="individual">
+                        Individual
+                    </option>
+
+                    <option value="business">
+                        Business
+                    </option>
+
+                    <option value="vip">
+                        VIP
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Company -->
+            <div>
+
+                <label for="customerCompany">
+                    Company Name
+                </label>
+
+                <input
+                    type="text"
+                    id="customerCompany"
+                    name="company"
+                    placeholder="Enter company name"
+                >
+
+            </div>
+
+
+            <!-- Date Joined -->
+            <div>
+
+                <label for="customerJoinDate">
+                    Customer Since
+                </label>
+
+                <input
+                    type="date"
+                    id="customerJoinDate"
+                    name="joinDate"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Status -->
+            <div>
+
+                <label for="customerStatus">
+                    Status
+                </label>
+
+                <select
+                    id="customerStatus"
+                    name="status"
+                    required
+                >
+
+                    <option value="active">
+                        Active
+                    </option>
+
+                    <option value="inactive">
+                        Inactive
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Address -->
+            <div>
+
+                <label for="customerAddress">
+                    Address
+                </label>
+
+                <textarea
+                    id="customerAddress"
+                    name="address"
+                    rows="3"
+                    placeholder="Enter customer address"
+                ></textarea>
+
+            </div>
+
+
+            <!-- City -->
+            <div>
+
+                <label for="customerCity">
+                    City
+                </label>
+
+                <input
+                    type="text"
+                    id="customerCity"
+                    name="city"
+                    placeholder="Enter city"
+                >
+
+            </div>
+
+
+            <!-- Notes -->
+            <div>
+
+                <label for="customerNotes">
+                    Notes
+                </label>
+
+                <textarea
+                    id="customerNotes"
+                    name="notes"
+                    rows="3"
+                    placeholder="Additional customer notes..."
+                ></textarea>
+
+            </div>
+
+
+            <!-- Form Message -->
+            <div
+                id="customerFormMessage"
+                role="alert"
+                aria-live="polite"
+            ></div>
+
+
+            <!-- Form Actions -->
+            <footer>
+
+                <button
+                    type="button"
+                    id="cancelCustomerForm"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    id="saveCustomerButton"
+                >
+                    Save Customer
+                </button>
+
+            </footer>
+
+        </form>
+
+    </dialog>
+
+
+    <!-- =========================================
+         CUSTOMER PROFILE MODAL
+    ========================================== -->
+
+    <dialog id="customerProfileModal">
+
+        <header>
+
+            <div>
+
+                <span>
+                    Customer Profile
+                </span>
+
+                <h2 id="profileCustomerName">
+                    Customer Name
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="closeCustomerProfile"
+                aria-label="Close customer profile"
+            >
+                Close
+            </button>
+
+        </header>
+
+
+        <div id="customerProfileContent">
+
+            <!-- Dynamic customer profile -->
+
+        </div>
+
+
+        <!-- Customer Activity -->
+        <section>
+
+            <h3>
+                Customer Activity
+            </h3>
+
+            <div id="customerActivity">
+
+                <!-- Dynamic activity -->
+
+            </div>
+
+        </section>
+
+
+        <footer>
+
+            <button
+                type="button"
+                id="editProfileCustomer"
+            >
+                Edit Customer
+            </button>
+
+        </footer>
+
+    </dialog>
+
+
+    <!-- =========================================
+         DELETE CONFIRMATION MODAL
+    ========================================== -->
+
+    <dialog id="deleteCustomerModal">
+
+        <header>
+
+            <h2>
+                Delete Customer
+            </h2>
+
+        </header>
+
+
+        <div>
+
+            <p>
+                Are you sure you want to delete this customer?
+            </p>
+
+            <p>
+                This action cannot be undone.
+            </p>
+
+        </div>
+
+
+        <footer>
+
+            <button
+                type="button"
+                id="cancelDeleteCustomer"
+            >
+                Cancel
+            </button>
+
+            <button
+                type="button"
+                id="confirmDeleteCustomer"
+            >
+                Delete Customer
+            </button>
+
+        </footer>
+
+    </dialog>
+
+
+    <!-- =========================================
+         GLOBAL UI ELEMENTS
+    ========================================== -->
+
+    <!-- Loading Overlay -->
+    <div
+        id="loadingOverlay"
+        hidden
+        aria-hidden="true"
+    >
+
+        <div>
+
+            <span>
+                Loading...
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- Toast Container -->
+    <div
+        id="toastContainer"
+        aria-live="polite"
+        aria-atomic="true"
+    >
+
+        <!-- Toast messages -->
+
+    </div>
+
+
+    <!-- Notification Modal -->
+    <dialog id="notificationModal">
+
+        <header>
+
+            <h2>
+                Notifications
+            </h2>
+
+            <button
+                type="button"
+                id="closeNotificationModal"
+            >
+                Close
+            </button>
+
+        </header>
+
+
+        <div id="notificationModalContent">
+
+            <!-- Dynamic notifications -->
+
+        </div>
+
+    </dialog>
+
+
+    <!-- User Menu -->
+    <dialog id="userMenuModal">
+
+        <header>
+
+            <h2>
+                My Account
+            </h2>
+
+            <button
+                type="button"
+                id="closeUserMenuModal"
+            >
+                Close
+            </button>
+
+        </header>
+
+
+        <div>
+
+            <p>
+
+                <strong>
+                    Name:
+                </strong>
+
+                <span id="currentUserName">
+                    Admin User
+                </span>
+
+            </p>
+
+
+            <p>
+
+                <strong>
+                    Role:
+                </strong>
+
+                <span id="currentUserRole">
+                    Administrator
+                </span>
+
+            </p>
+
+
+            <button
+                type="button"
+                id="modalLogoutButton"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </dialog>
+
+
+    <!-- =========================================
+         JAVASCRIPT WILL BE ADDED LATER
+    ========================================== -->
+
+</body>
+</html>

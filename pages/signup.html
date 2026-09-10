@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Create your NEXORA ERP account"
+    >
+
+    <link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<link rel="stylesheet" href="../css/auth.css">
+
+    <title>Sign Up | NEXORA ERP</title>
+</head>
+
+<body>
+
+    <!-- =========================================
+         SIGN UP PAGE
+    ========================================== -->
+
+    <main>
+
+        <!-- Signup Container -->
+        <section>
+
+            <!-- Brand -->
+            <header>
+
+                <h1>NEXORA ERP</h1>
+
+                <p>
+                    Smart Business Management
+                </p>
+
+            </header>
+
+
+            <!-- Page Heading -->
+            <div>
+
+                <h2>Create Your Account</h2>
+
+                <p>
+                    Create an account to start using NEXORA ERP.
+                </p>
+
+            </div>
+
+
+            <!-- Signup Form -->
+            <form id="signupForm">
+
+                <!-- Full Name -->
+                <div>
+
+                    <label for="fullName">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="fullName"
+                        name="fullName"
+                        placeholder="Enter your full name"
+                        autocomplete="name"
+                        required
+                    >
+
+                    <small
+                        id="nameError"
+                        role="alert"
+                    ></small>
+
+                </div>
+
+
+                <!-- Email -->
+                <div>
+
+                    <label for="signupEmail">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="signupEmail"
+                        name="email"
+                        placeholder="Enter your email"
+                        autocomplete="email"
+                        required
+                    >
+
+                    <small
+                        id="signupEmailError"
+                        role="alert"
+                    ></small>
+
+                </div>
+
+
+                <!-- Phone -->
+                <div>
+
+                    <label for="phone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="Enter your phone number"
+                        autocomplete="tel"
+                    >
+
+                    <small
+                        id="phoneError"
+                        role="alert"
+                    ></small>
+
+                </div>
+
+
+                <!-- Password -->
+                <div>
+
+                    <label for="signupPassword">
+                        Password
+                    </label>
+
+                    <div>
+
+                        <input
+                            type="password"
+                            id="signupPassword"
+                            name="password"
+                            placeholder="Create a password"
+                            autocomplete="new-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="toggleSignupPassword"
+                            aria-label="Show password"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+
+
+                    <!-- Password Strength -->
+                    <div>
+
+                        <div
+                            id="passwordStrengthBar"
+                            aria-hidden="true"
+                        ></div>
+
+                        <p id="passwordStrengthText">
+                            Password strength
+                        </p>
+
+                    </div>
+
+
+                    <small
+                        id="signupPasswordError"
+                        role="alert"
+                    ></small>
+
+                </div>
+
+
+                <!-- Confirm Password -->
+                <div>
+
+                    <label for="confirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <div>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            placeholder="Confirm your password"
+                            autocomplete="new-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="toggleConfirmPassword"
+                            aria-label="Show password"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+
+                    <small
+                        id="confirmPasswordError"
+                        role="alert"
+                    ></small>
+
+                </div>
+
+
+                <!-- Role -->
+                <div>
+
+                    <label for="userRole">
+                        Account Role
+                    </label>
+
+                    <select
+                        id="userRole"
+                        name="role"
+                        required
+                    >
+
+                        <option value="">
+                            Select your role
+                        </option>
+
+                        <option value="admin">
+                            Admin
+                        </option>
+
+                        <option value="manager">
+                            Manager
+                        </option>
+
+                        <option value="employee">
+                            Employee
+                        </option>
+
+                    </select>
+
+                    <small
+                        id="roleError"
+                        role="alert"
+                    ></small>
+
+                </div>
+
+
+                <!-- Terms and Conditions -->
+                <div>
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            id="terms"
+                            name="terms"
+                            required
+                        >
+
+                        I agree to the
+                        <a href="#">
+                            Terms & Conditions
+                        </a>
+
+                    </label>
+
+                    <small
+                        id="termsError"
+                        role="alert"
+                    ></small>
+
+                </div>
+
+
+                <!-- Message -->
+                <div
+                    id="signupMessage"
+                    role="alert"
+                    aria-live="polite"
+                ></div>
+
+
+                <!-- Create Account Button -->
+                <button
+                    type="submit"
+                    id="signupButton"
+                >
+                    Create Account
+                </button>
+
+            </form>
+
+
+            <!-- Login Link -->
+            <footer>
+
+                <p>
+                    Already have an account?
+
+                    <a href="login.html">
+                        Sign In
+                    </a>
+                </p>
+
+            </footer>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         JAVASCRIPT WILL BE ADDED LATER
+    ========================================== -->
+
+</body>
+</html>

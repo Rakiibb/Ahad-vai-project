@@ -1,0 +1,1676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Inventory Management | NEXORA ERP</title>
+
+    <!-- Future CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+
+    <!-- ================================
+         APP WRAPPER
+    ================================= -->
+    <div class="app-wrapper">
+
+        <!-- ================================
+             SIDEBAR
+        ================================= -->
+        <aside class="sidebar" id="sidebar">
+
+            <!-- Logo -->
+            <div class="sidebar-header">
+                <a href="dashboard.html" class="brand-logo">
+                    <span class="brand-icon">N</span>
+                    <span class="brand-name">NEXORA</span>
+                </a>
+
+                <button
+                    type="button"
+                    class="sidebar-close"
+                    id="sidebarCloseBtn"
+                    aria-label="Close sidebar">
+                    &times;
+                </button>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="sidebar-navigation">
+
+                <div class="nav-section">
+                    <p class="nav-section-title">MAIN</p>
+
+                    <a href="dashboard.html" class="nav-link">
+                        <span class="nav-icon">▣</span>
+                        <span class="nav-text">Dashboard</span>
+                    </a>
+
+                    <a href="employees.html" class="nav-link">
+                        <span class="nav-icon">♙</span>
+                        <span class="nav-text">Employees</span>
+                    </a>
+
+                    <a href="customers.html" class="nav-link">
+                        <span class="nav-icon">♙</span>
+                        <span class="nav-text">Customers</span>
+                    </a>
+
+                    <a href="products.html" class="nav-link">
+                        <span class="nav-icon">▦</span>
+                        <span class="nav-text">Products</span>
+                    </a>
+
+                    <a href="inventory.html"
+                       class="nav-link active"
+                       aria-current="page">
+                        <span class="nav-icon">▤</span>
+                        <span class="nav-text">Inventory</span>
+                    </a>
+
+                    <a href="sales.html" class="nav-link">
+                        <span class="nav-icon">▰</span>
+                        <span class="nav-text">Sales</span>
+                    </a>
+
+                    <a href="invoice.html" class="nav-link">
+                        <span class="nav-icon">▤</span>
+                        <span class="nav-text">Invoices</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <p class="nav-section-title">FINANCE</p>
+
+                    <a href="finance.html" class="nav-link">
+                        <span class="nav-icon">৳</span>
+                        <span class="nav-text">Finance</span>
+                    </a>
+
+                    <a href="reports.html" class="nav-link">
+                        <span class="nav-icon">▥</span>
+                        <span class="nav-text">Reports</span>
+                    </a>
+                </div>
+
+                <div class="nav-section">
+                    <p class="nav-section-title">SYSTEM</p>
+
+                    <button
+                        type="button"
+                        class="nav-link nav-button"
+                        id="settingsBtn">
+                        <span class="nav-icon">⚙</span>
+                        <span class="nav-text">Settings</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="nav-link nav-button"
+                        id="helpBtn">
+                        <span class="nav-icon">?</span>
+                        <span class="nav-text">Help & Support</span>
+                    </button>
+                </div>
+
+            </nav>
+
+            <!-- Sidebar Bottom -->
+            <div class="sidebar-bottom">
+
+                <div class="sidebar-user-mini">
+                    <div class="user-avatar">
+                        <span id="sidebarUserInitial">R</span>
+                    </div>
+
+                    <div class="sidebar-user-info">
+                        <strong id="sidebarUserName">Rakib</strong>
+                        <small id="sidebarUserRole">Administrator</small>
+                    </div>
+                </div>
+
+                <button
+                    type="button"
+                    class="logout-button"
+                    id="logoutBtn">
+                    <span>↪</span>
+                    <span>Logout</span>
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ================================
+             MAIN CONTENT
+        ================================= -->
+        <main class="main-content">
+
+            <!-- ================================
+                 TOP NAVBAR
+            ================================= -->
+            <header class="top-navbar">
+
+                <div class="navbar-left">
+
+                    <button
+                        type="button"
+                        class="sidebar-toggle"
+                        id="sidebarToggleBtn"
+                        aria-label="Toggle sidebar">
+                        ☰
+                    </button>
+
+                    <div class="global-search">
+                        <span class="search-icon">⌕</span>
+
+                        <input
+                            type="search"
+                            id="globalSearch"
+                            placeholder="Search anything..."
+                            autocomplete="off">
+
+                        <span class="search-shortcut">Ctrl K</span>
+                    </div>
+
+                </div>
+
+
+                <div class="navbar-right">
+
+                    <!-- Notifications -->
+                    <button
+                        type="button"
+                        class="navbar-icon-button notification-button"
+                        id="notificationBtn"
+                        aria-label="Notifications">
+
+                        <span class="notification-icon">♢</span>
+
+                        <span
+                            class="notification-badge"
+                            id="notificationBadge">
+                            3
+                        </span>
+
+                    </button>
+
+
+                    <!-- Theme -->
+                    <button
+                        type="button"
+                        class="navbar-icon-button"
+                        id="themeToggleBtn"
+                        aria-label="Toggle theme">
+
+                        <span id="themeIcon">☾</span>
+
+                    </button>
+
+
+                    <!-- User Menu -->
+                    <button
+                        type="button"
+                        class="navbar-user"
+                        id="userMenuBtn">
+
+                        <div class="navbar-user-avatar">
+                            <span id="navbarUserInitial">R</span>
+                        </div>
+
+                        <div class="navbar-user-info">
+                            <strong id="navbarUserName">Rakib</strong>
+                            <small id="navbarUserRole">Administrator</small>
+                        </div>
+
+                        <span class="user-menu-arrow">⌄</span>
+
+                    </button>
+
+                </div>
+
+            </header>
+
+
+            <!-- ================================
+                 PAGE CONTENT
+            ================================= -->
+            <section class="page-content">
+
+                <!-- Page Header -->
+                <div class="page-header">
+
+                    <div class="page-header-left">
+
+                        <div class="breadcrumb">
+                            <a href="dashboard.html">Dashboard</a>
+                            <span>/</span>
+                            <span>Inventory</span>
+                        </div>
+
+                        <h1>Inventory Management</h1>
+
+                        <p>
+                            Monitor stock levels, stock movements and inventory
+                            activities from one place.
+                        </p>
+
+                    </div>
+
+
+                    <div class="page-header-actions">
+
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            id="stockInBtn">
+                            <span>＋</span>
+                            Stock In
+                        </button>
+
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            id="stockOutBtn">
+                            <span>−</span>
+                            Stock Out
+                        </button>
+
+                        <button
+                            type="button"
+                            class="primary-button"
+                            id="addInventoryBtn">
+                            <span>＋</span>
+                            Add Stock
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================================
+                     INVENTORY SUMMARY CARDS
+                ================================= -->
+                <div class="stats-grid inventory-stats-grid">
+
+                    <!-- Total Products -->
+                    <div class="stat-card">
+
+                        <div class="stat-card-content">
+
+                            <div>
+                                <p class="stat-label">Total Products</p>
+
+                                <h2
+                                    class="stat-value"
+                                    id="totalInventoryProducts">
+                                    0
+                                </h2>
+
+                                <span class="stat-description">
+                                    Products in inventory
+                                </span>
+                            </div>
+
+                            <div class="stat-icon">
+                                ▦
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Total Stock -->
+                    <div class="stat-card">
+
+                        <div class="stat-card-content">
+
+                            <div>
+                                <p class="stat-label">Total Stock</p>
+
+                                <h2
+                                    class="stat-value"
+                                    id="totalStockQuantity">
+                                    0
+                                </h2>
+
+                                <span class="stat-description">
+                                    Units available
+                                </span>
+                            </div>
+
+                            <div class="stat-icon">
+                                ◉
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Low Stock -->
+                    <div class="stat-card warning-card">
+
+                        <div class="stat-card-content">
+
+                            <div>
+                                <p class="stat-label">Low Stock</p>
+
+                                <h2
+                                    class="stat-value"
+                                    id="lowStockCount">
+                                    0
+                                </h2>
+
+                                <span class="stat-description">
+                                    Need attention
+                                </span>
+                            </div>
+
+                            <div class="stat-icon warning-icon">
+                                ⚠
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Out of Stock -->
+                    <div class="stat-card danger-card">
+
+                        <div class="stat-card-content">
+
+                            <div>
+                                <p class="stat-label">Out of Stock</p>
+
+                                <h2
+                                    class="stat-value"
+                                    id="outOfStockCount">
+                                    0
+                                </h2>
+
+                                <span class="stat-description">
+                                    Currently unavailable
+                                </span>
+                            </div>
+
+                            <div class="stat-icon danger-icon">
+                                !
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================================
+                     LOW STOCK ALERT
+                ================================= -->
+                <div
+                    class="inventory-alert"
+                    id="lowStockAlert"
+                    hidden>
+
+                    <div class="alert-icon">
+                        ⚠
+                    </div>
+
+                    <div class="alert-content">
+
+                        <strong>Low Stock Alert</strong>
+
+                        <p>
+                            Some products are running low. Review the inventory
+                            and update stock levels.
+                        </p>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="alert-action"
+                        id="viewLowStockBtn">
+                        View Low Stock
+                    </button>
+
+                </div>
+
+
+                <!-- ================================
+                     INVENTORY TABLE SECTION
+                ================================= -->
+                <div class="content-card">
+
+                    <!-- Card Header -->
+                    <div class="content-card-header">
+
+                        <div>
+                            <h2>Inventory Stock</h2>
+
+                            <p>
+                                View and manage current product stock levels.
+                            </p>
+                        </div>
+
+                        <button
+                            type="button"
+                            class="icon-button"
+                            id="inventoryRefreshBtn"
+                            title="Refresh inventory">
+                            ↻
+                        </button>
+
+                    </div>
+
+
+                    <!-- ================================
+                         FILTER TOOLBAR
+                    ================================= -->
+                    <div class="table-toolbar">
+
+                        <!-- Search -->
+                        <div class="table-search">
+
+                            <span class="search-icon">⌕</span>
+
+                            <input
+                                type="search"
+                                id="inventorySearch"
+                                placeholder="Search products..."
+                                autocomplete="off">
+
+                        </div>
+
+
+                        <!-- Category -->
+                        <div class="filter-control">
+
+                            <label for="inventoryCategoryFilter">
+                                Category
+                            </label>
+
+                            <select id="inventoryCategoryFilter">
+
+                                <option value="all">
+                                    All Categories
+                                </option>
+
+                                <option value="electronics">
+                                    Electronics
+                                </option>
+
+                                <option value="accessories">
+                                    Accessories
+                                </option>
+
+                                <option value="office">
+                                    Office Supplies
+                                </option>
+
+                                <option value="furniture">
+                                    Furniture
+                                </option>
+
+                                <option value="software">
+                                    Software
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Stock Status -->
+                        <div class="filter-control">
+
+                            <label for="inventoryStatusFilter">
+                                Stock Status
+                            </label>
+
+                            <select id="inventoryStatusFilter">
+
+                                <option value="all">
+                                    All Status
+                                </option>
+
+                                <option value="in-stock">
+                                    In Stock
+                                </option>
+
+                                <option value="low-stock">
+                                    Low Stock
+                                </option>
+
+                                <option value="out-of-stock">
+                                    Out of Stock
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Sort -->
+                        <div class="filter-control">
+
+                            <label for="inventorySort">
+                                Sort By
+                            </label>
+
+                            <select id="inventorySort">
+
+                                <option value="recent">
+                                    Recently Updated
+                                </option>
+
+                                <option value="name-asc">
+                                    Name A-Z
+                                </option>
+
+                                <option value="name-desc">
+                                    Name Z-A
+                                </option>
+
+                                <option value="stock-high">
+                                    Stock High-Low
+                                </option>
+
+                                <option value="stock-low">
+                                    Stock Low-High
+                                </option>
+
+                                <option value="price-high">
+                                    Price High-Low
+                                </option>
+
+                                <option value="price-low">
+                                    Price Low-High
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Reset Filters -->
+                        <button
+                            type="button"
+                            class="reset-filter-button"
+                            id="resetInventoryFilters">
+                            Reset
+                        </button>
+
+                    </div>
+
+
+                    <!-- ================================
+                         TABLE
+                    ================================= -->
+                    <div class="table-responsive">
+
+                        <table
+                            class="data-table inventory-table"
+                            id="inventoryTable">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        <input
+                                            type="checkbox"
+                                            id="selectAllInventory">
+                                    </th>
+
+                                    <th>Product</th>
+
+                                    <th>SKU</th>
+
+                                    <th>Category</th>
+
+                                    <th>Current Stock</th>
+
+                                    <th>Minimum Stock</th>
+
+                                    <th>Stock Status</th>
+
+                                    <th>Last Updated</th>
+
+                                    <th>Actions</th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="inventoryTableBody">
+
+                                <!--
+                                    Inventory rows will be
+                                    dynamically rendered by JavaScript.
+                                -->
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+                    <!-- Empty State -->
+                    <div
+                        class="empty-state"
+                        id="inventoryEmptyState"
+                        hidden>
+
+                        <div class="empty-state-icon">
+                            ▤
+                        </div>
+
+                        <h3>No inventory found</h3>
+
+                        <p>
+                            No products match your current search or filters.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            id="clearInventoryFiltersBtn">
+                            Clear Filters
+                        </button>
+
+                    </div>
+
+
+                    <!-- ================================
+                         TABLE FOOTER / PAGINATION
+                    ================================= -->
+                    <div class="table-footer">
+
+                        <div class="bulk-actions">
+
+                            <span id="selectedInventoryCount">
+                                0 selected
+                            </span>
+
+                            <button
+                                type="button"
+                                class="text-button danger-text"
+                                id="bulkStockUpdateBtn"
+                                hidden>
+                                Bulk Update
+                            </button>
+
+                        </div>
+
+
+                        <div class="pagination-info">
+
+                            Showing
+                            <strong id="inventoryShowingFrom">0</strong>
+                            -
+                            <strong id="inventoryShowingTo">0</strong>
+                            of
+                            <strong id="inventoryTotalCount">0</strong>
+
+                        </div>
+
+
+                        <div class="pagination">
+
+                            <button
+                                type="button"
+                                class="pagination-button"
+                                id="inventoryPrevPage"
+                                aria-label="Previous page">
+                                ‹
+                            </button>
+
+                            <div
+                                class="pagination-pages"
+                                id="inventoryPaginationPages">
+                            </div>
+
+                            <button
+                                type="button"
+                                class="pagination-button"
+                                id="inventoryNextPage"
+                                aria-label="Next page">
+                                ›
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================================
+                     STOCK MOVEMENT HISTORY
+                ================================= -->
+                <div class="content-card inventory-history-card">
+
+                    <div class="content-card-header">
+
+                        <div>
+                            <h2>Recent Stock Movements</h2>
+
+                            <p>
+                                Track recent stock in and stock out activities.
+                            </p>
+                        </div>
+
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            id="viewInventoryHistoryBtn">
+                            View Full History
+                        </button>
+
+                    </div>
+
+
+                    <div class="table-responsive">
+
+                        <table
+                            class="data-table movement-table"
+                            id="movementTable">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>Reference</th>
+
+                                    <th>Product</th>
+
+                                    <th>Type</th>
+
+                                    <th>Quantity</th>
+
+                                    <th>Previous Stock</th>
+
+                                    <th>Updated Stock</th>
+
+                                    <th>Date</th>
+
+                                    <th>Updated By</th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="movementTableBody">
+
+                                <!--
+                                    Stock movement history
+                                    will be rendered using JavaScript.
+                                -->
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- ==================================================
+         ADD / EDIT STOCK MODAL
+    =================================================== -->
+    <div
+        class="modal-overlay"
+        id="inventoryModal"
+        hidden>
+
+        <div
+            class="modal modal-large"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="inventoryModalTitle">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+
+                <div>
+                    <h2 id="inventoryModalTitle">
+                        Add Stock
+                    </h2>
+
+                    <p id="inventoryModalDescription">
+                        Add stock to an existing product.
+                    </p>
+                </div>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="closeInventoryModal"
+                    aria-label="Close modal">
+                    &times;
+                </button>
+
+            </div>
+
+
+            <!-- Modal Body -->
+            <div class="modal-body">
+
+                <form
+                    id="inventoryForm"
+                    novalidate>
+
+                    <!-- Hidden ID -->
+                    <input
+                        type="hidden"
+                        id="inventoryRecordId">
+
+
+                    <!-- Product Selection -->
+                    <div class="form-group">
+
+                        <label for="inventoryProduct">
+                            Product
+                            <span class="required">*</span>
+                        </label>
+
+                        <select
+                            id="inventoryProduct"
+                            name="product"
+                            required>
+
+                            <option value="">
+                                Select Product
+                            </option>
+
+                        </select>
+
+                        <small
+                            class="form-error"
+                            id="inventoryProductError">
+                        </small>
+
+                    </div>
+
+
+                    <!-- Two Columns -->
+                    <div class="form-row">
+
+                        <!-- Movement Type -->
+                        <div class="form-group">
+
+                            <label for="inventoryMovementType">
+                                Movement Type
+                                <span class="required">*</span>
+                            </label>
+
+                            <select
+                                id="inventoryMovementType"
+                                name="movementType"
+                                required>
+
+                                <option value="">
+                                    Select Type
+                                </option>
+
+                                <option value="stock-in">
+                                    Stock In
+                                </option>
+
+                                <option value="stock-out">
+                                    Stock Out
+                                </option>
+
+                                <option value="adjustment">
+                                    Stock Adjustment
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Quantity -->
+                        <div class="form-group">
+
+                            <label for="inventoryQuantity">
+                                Quantity
+                                <span class="required">*</span>
+                            </label>
+
+                            <input
+                                type="number"
+                                id="inventoryQuantity"
+                                name="quantity"
+                                min="1"
+                                placeholder="Enter quantity"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Two Columns -->
+                    <div class="form-row">
+
+                        <!-- Reference -->
+                        <div class="form-group">
+
+                            <label for="inventoryReference">
+                                Reference
+                            </label>
+
+                            <input
+                                type="text"
+                                id="inventoryReference"
+                                name="reference"
+                                placeholder="e.g. PO-10045">
+
+                        </div>
+
+
+                        <!-- Supplier -->
+                        <div class="form-group">
+
+                            <label for="inventorySupplier">
+                                Supplier
+                            </label>
+
+                            <input
+                                type="text"
+                                id="inventorySupplier"
+                                name="supplier"
+                                placeholder="Enter supplier name">
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Unit Cost -->
+                    <div class="form-group">
+
+                        <label for="inventoryUnitCost">
+                            Unit Cost
+                        </label>
+
+                        <input
+                            type="number"
+                            id="inventoryUnitCost"
+                            name="unitCost"
+                            min="0"
+                            step="0.01"
+                            placeholder="0.00">
+
+                    </div>
+
+
+                    <!-- Notes -->
+                    <div class="form-group">
+
+                        <label for="inventoryNotes">
+                            Notes
+                        </label>
+
+                        <textarea
+                            id="inventoryNotes"
+                            name="notes"
+                            rows="4"
+                            placeholder="Add any additional notes..."></textarea>
+
+                    </div>
+
+
+                    <!-- Form Message -->
+                    <div
+                        class="form-message"
+                        id="inventoryFormMessage"
+                        role="alert">
+                    </div>
+
+                </form>
+
+            </div>
+
+
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    id="cancelInventoryBtn">
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    form="inventoryForm"
+                    class="primary-button"
+                    id="saveInventoryBtn">
+                    Save Stock
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         INVENTORY DETAILS MODAL
+    =================================================== -->
+    <div
+        class="modal-overlay"
+        id="inventoryDetailsModal"
+        hidden>
+
+        <div
+            class="modal modal-large"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="inventoryDetailsTitle">
+
+            <div class="modal-header">
+
+                <div>
+                    <h2 id="inventoryDetailsTitle">
+                        Inventory Details
+                    </h2>
+
+                    <p>
+                        Product stock information and movement history.
+                    </p>
+                </div>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="closeInventoryDetailsModal"
+                    aria-label="Close modal">
+                    &times;
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <!-- Product Summary -->
+                <div class="inventory-product-summary">
+
+                    <div class="product-image-large">
+                        <img
+                            id="inventoryDetailsImage"
+                            src="../assets/images/product-placeholder.png"
+                            alt="Product image">
+                    </div>
+
+                    <div class="product-summary-info">
+
+                        <span
+                            class="status-badge"
+                            id="inventoryDetailsStatus">
+                            In Stock
+                        </span>
+
+                        <h3 id="inventoryDetailsProductName">
+                            Product Name
+                        </h3>
+
+                        <p id="inventoryDetailsSKU">
+                            SKU: -
+                        </p>
+
+                        <p id="inventoryDetailsCategory">
+                            Category: -
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Stock Information -->
+                <div class="details-grid">
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Current Stock
+                        </span>
+
+                        <strong
+                            id="inventoryDetailsCurrentStock">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Minimum Stock
+                        </span>
+
+                        <strong
+                            id="inventoryDetailsMinimumStock">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Total Stock In
+                        </span>
+
+                        <strong
+                            id="inventoryDetailsStockIn">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Total Stock Out
+                        </span>
+
+                        <strong
+                            id="inventoryDetailsStockOut">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Movement History -->
+                <div class="details-section">
+
+                    <h3>Movement History</h3>
+
+                    <div class="table-responsive">
+
+                        <table class="data-table">
+
+                            <thead>
+
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Type</th>
+                                    <th>Quantity</th>
+                                    <th>Reference</th>
+                                    <th>Updated By</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="inventoryDetailsHistoryBody">
+                                <!-- Dynamic -->
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    id="closeInventoryDetailsBtn">
+                    Close
+                </button>
+
+                <button
+                    type="button"
+                    class="primary-button"
+                    id="detailsUpdateStockBtn">
+                    Update Stock
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         DELETE / REMOVE STOCK CONFIRMATION
+    =================================================== -->
+    <div
+        class="modal-overlay"
+        id="inventoryDeleteModal"
+        hidden>
+
+        <div
+            class="modal modal-small"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="inventoryDeleteTitle">
+
+            <div class="modal-header">
+
+                <h2 id="inventoryDeleteTitle">
+                    Remove Inventory Record
+                </h2>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="closeInventoryDeleteModal"
+                    aria-label="Close modal">
+                    &times;
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <div class="confirmation-content">
+
+                    <div class="confirmation-icon danger-icon">
+                        !
+                    </div>
+
+                    <h3>
+                        Are you sure?
+                    </h3>
+
+                    <p>
+                        This inventory record will be removed. This action
+                        cannot be undone.
+                    </p>
+
+                    <input
+                        type="hidden"
+                        id="inventoryDeleteId">
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    id="cancelInventoryDeleteBtn">
+                    Cancel
+                </button>
+
+                <button
+                    type="button"
+                    class="danger-button"
+                    id="confirmInventoryDeleteBtn">
+                    Remove Record
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         NOTIFICATION PANEL / MODAL
+    =================================================== -->
+    <div
+        class="modal-overlay"
+        id="notificationModal"
+        hidden>
+
+        <div
+            class="modal modal-medium"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="notificationModalTitle">
+
+            <div class="modal-header">
+
+                <div>
+                    <h2 id="notificationModalTitle">
+                        Notifications
+                    </h2>
+
+                    <p>
+                        Recent alerts and system activities.
+                    </p>
+                </div>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="closeNotificationModal"
+                    aria-label="Close notifications">
+                    &times;
+                </button>
+
+            </div>
+
+
+            <div class="modal-body notification-list"
+                 id="notificationList">
+
+                <!-- Notification -->
+                <div class="notification-item unread">
+
+                    <div class="notification-item-icon warning-icon">
+                        ⚠
+                    </div>
+
+                    <div class="notification-item-content">
+
+                        <strong>Low Stock Alert</strong>
+
+                        <p>
+                            Some products are below the minimum stock level.
+                        </p>
+
+                        <small>
+                            Just now
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Notification -->
+                <div class="notification-item">
+
+                    <div class="notification-item-icon">
+                        ✓
+                    </div>
+
+                    <div class="notification-item-content">
+
+                        <strong>Stock Updated</strong>
+
+                        <p>
+                            Inventory stock has been updated successfully.
+                        </p>
+
+                        <small>
+                            20 minutes ago
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Notification -->
+                <div class="notification-item">
+
+                    <div class="notification-item-icon">
+                        ▣
+                    </div>
+
+                    <div class="notification-item-content">
+
+                        <strong>New Order</strong>
+
+                        <p>
+                            A new order has been received.
+                        </p>
+
+                        <small>
+                            1 hour ago
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="text-button"
+                    id="markNotificationsReadBtn">
+                    Mark all as read
+                </button>
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    id="closeNotificationsBtn">
+                    Close
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         USER MENU
+    =================================================== -->
+    <div
+        class="dropdown-menu user-dropdown"
+        id="userDropdown"
+        hidden>
+
+        <div class="dropdown-user-header">
+
+            <div class="user-avatar">
+                <span>R</span>
+            </div>
+
+            <div>
+                <strong id="dropdownUserName">
+                    Rakib
+                </strong>
+
+                <small id="dropdownUserEmail">
+                    admin@nexora.com
+                </small>
+            </div>
+
+        </div>
+
+
+        <div class="dropdown-divider"></div>
+
+
+        <a
+            href="#"
+            class="dropdown-item"
+            id="profileMenuItem">
+            <span>♙</span>
+            My Profile
+        </a>
+
+
+        <button
+            type="button"
+            class="dropdown-item"
+            id="settingsMenuItem">
+            <span>⚙</span>
+            Settings
+        </button>
+
+
+        <div class="dropdown-divider"></div>
+
+
+        <button
+            type="button"
+            class="dropdown-item danger-text"
+            id="dropdownLogoutBtn">
+            <span>↪</span>
+            Logout
+        </button>
+
+    </div>
+
+
+    <!-- ==================================================
+         LOGOUT CONFIRMATION
+    =================================================== -->
+    <div
+        class="modal-overlay"
+        id="logoutModal"
+        hidden>
+
+        <div
+            class="modal modal-small"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="logoutModalTitle">
+
+            <div class="modal-header">
+
+                <h2 id="logoutModalTitle">
+                    Logout
+                </h2>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="closeLogoutModal"
+                    aria-label="Close modal">
+                    &times;
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <div class="confirmation-content">
+
+                    <div class="confirmation-icon">
+                        ↪
+                    </div>
+
+                    <h3>
+                        Do you want to logout?
+                    </h3>
+
+                    <p>
+                        You will be redirected to the login page.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    id="cancelLogoutBtn">
+                    Cancel
+                </button>
+
+                <button
+                    type="button"
+                    class="danger-button"
+                    id="confirmLogoutBtn">
+                    Logout
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         GLOBAL LOADING OVERLAY
+    =================================================== -->
+    <div
+        class="loading-overlay"
+        id="globalLoading"
+        hidden>
+
+        <div class="loading-content">
+
+            <div class="loading-spinner"></div>
+
+            <p id="loadingMessage">
+                Loading...
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         TOAST CONTAINER
+    =================================================== -->
+    <div
+        class="toast-container"
+        id="toastContainer"
+        aria-live="polite"
+        aria-atomic="true">
+
+        <!--
+            Toast messages will be dynamically
+            generated here by JavaScript.
+        -->
+
+    </div>
+
+
+    <!-- ==================================================
+         FUTURE JAVASCRIPT
+    =================================================== -->
+
+    <!-- Main App -->
+    <script type="module" src="../js/app.js"></script>
+
+    <!-- Inventory Module -->
+    <script type="module" src="../js/inventory.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Login to NEXORA ERP Smart Business Management Dashboard"
+    >
+
+    <link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<link rel="stylesheet" href="../css/auth.css">
+
+    <title>Login | NEXORA ERP</title>
+</head>
+
+<body>
+
+    <!-- =========================================
+         LOGIN PAGE
+    ========================================== -->
+
+    <main>
+
+        <!-- Login Container -->
+        <section>
+
+            <!-- Brand / Logo -->
+            <header>
+
+                <h1>NEXORA ERP</h1>
+
+                <p>
+                    Smart Business Management
+                </p>
+
+            </header>
+
+
+            <!-- Login Heading -->
+            <div>
+
+                <h2>Welcome Back</h2>
+
+                <p>
+                    Sign in to access your NEXORA ERP dashboard.
+                </p>
+
+            </div>
+
+
+            <!-- Login Form -->
+            <form id="loginForm">
+
+                <!-- Email -->
+                <div>
+
+                    <label for="loginEmail">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        name="email"
+                        placeholder="Enter your email"
+                        autocomplete="email"
+                        required
+                    >
+
+                    <!-- Email Error Message -->
+                    <small
+                        id="emailError"
+                        role="alert"
+                    ></small>
+
+                </div>
+
+
+                <!-- Password -->
+                <div>
+
+                    <label for="loginPassword">
+                        Password
+                    </label>
+
+                    <div>
+
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            name="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                        <!-- Show / Hide Password -->
+                        <button
+                            type="button"
+                            id="togglePassword"
+                            aria-label="Show password"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+
+                    <!-- Password Error Message -->
+                    <small
+                        id="passwordError"
+                        role="alert"
+                    ></small>
+
+                </div>
+
+
+                <!-- Remember Me + Forgot Password -->
+                <div>
+
+                    <!-- Remember Me -->
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            id="rememberMe"
+                            name="rememberMe"
+                        >
+
+                        Remember me
+
+                    </label>
+
+
+                    <!-- Forgot Password -->
+                    <a href="forgot-password.html">
+                        Forgot Password?
+                    </a>
+
+                </div>
+
+
+                <!-- General Error / Success Message -->
+                <div
+                    id="loginMessage"
+                    role="alert"
+                    aria-live="polite"
+                ></div>
+
+
+                <!-- Login Button -->
+                <button
+                    type="submit"
+                    id="loginButton"
+                >
+                    Sign In
+                </button>
+
+            </form>
+
+
+            <!-- Sign Up -->
+            <footer>
+
+                <p>
+                    Don't have an account?
+                    <a href="signup.html">
+                        Create an account
+                    </a>
+                </p>
+
+            </footer>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         JAVASCRIPT WILL BE ADDED LATER
+    ========================================== -->
+
+</body>
+</html>

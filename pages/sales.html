@@ -1,0 +1,1962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sales Management | NEXORA ERP</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         APP WRAPPER
+    ========================================== -->
+    <div class="app-wrapper">
+
+        <!-- =========================================
+             SIDEBAR
+        ========================================== -->
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-header">
+
+                <a href="dashboard.html" class="brand-logo">
+                    <span class="brand-icon">N</span>
+                    <span class="brand-name">NEXORA</span>
+                </a>
+
+                <button
+                    type="button"
+                    class="sidebar-close"
+                    id="sidebarCloseBtn"
+                    aria-label="Close sidebar">
+                    &times;
+                </button>
+
+            </div>
+
+
+            <nav class="sidebar-navigation">
+
+                <div class="nav-section">
+
+                    <p class="nav-section-title">MAIN</p>
+
+                    <a href="dashboard.html" class="nav-link">
+                        <span class="nav-icon">▣</span>
+                        <span class="nav-text">Dashboard</span>
+                    </a>
+
+                    <a href="employees.html" class="nav-link">
+                        <span class="nav-icon">♙</span>
+                        <span class="nav-text">Employees</span>
+                    </a>
+
+                    <a href="customers.html" class="nav-link">
+                        <span class="nav-icon">♙</span>
+                        <span class="nav-text">Customers</span>
+                    </a>
+
+                    <a href="products.html" class="nav-link">
+                        <span class="nav-icon">▦</span>
+                        <span class="nav-text">Products</span>
+                    </a>
+
+                    <a href="inventory.html" class="nav-link">
+                        <span class="nav-icon">▤</span>
+                        <span class="nav-text">Inventory</span>
+                    </a>
+
+                    <a
+                        href="sales.html"
+                        class="nav-link active"
+                        aria-current="page">
+                        <span class="nav-icon">▰</span>
+                        <span class="nav-text">Sales</span>
+                    </a>
+
+                    <a href="invoice.html" class="nav-link">
+                        <span class="nav-icon">▤</span>
+                        <span class="nav-text">Invoices</span>
+                    </a>
+
+                </div>
+
+
+                <div class="nav-section">
+
+                    <p class="nav-section-title">FINANCE</p>
+
+                    <a href="finance.html" class="nav-link">
+                        <span class="nav-icon">৳</span>
+                        <span class="nav-text">Finance</span>
+                    </a>
+
+                    <a href="reports.html" class="nav-link">
+                        <span class="nav-icon">▥</span>
+                        <span class="nav-text">Reports</span>
+                    </a>
+
+                </div>
+
+
+                <div class="nav-section">
+
+                    <p class="nav-section-title">SYSTEM</p>
+
+                    <button
+                        type="button"
+                        class="nav-link nav-button"
+                        id="settingsBtn">
+                        <span class="nav-icon">⚙</span>
+                        <span class="nav-text">Settings</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="nav-link nav-button"
+                        id="helpBtn">
+                        <span class="nav-icon">?</span>
+                        <span class="nav-text">Help & Support</span>
+                    </button>
+
+                </div>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <div class="sidebar-user-mini">
+
+                    <div class="user-avatar">
+                        <span id="sidebarUserInitial">R</span>
+                    </div>
+
+                    <div class="sidebar-user-info">
+                        <strong id="sidebarUserName">Rakib</strong>
+                        <small id="sidebarUserRole">Administrator</small>
+                    </div>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="logout-button"
+                    id="logoutBtn">
+
+                    <span>↪</span>
+                    <span>Logout</span>
+
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =========================================
+             MAIN CONTENT
+        ========================================== -->
+        <main class="main-content">
+
+            <!-- =========================================
+                 TOP NAVBAR
+            ========================================== -->
+            <header class="top-navbar">
+
+                <div class="navbar-left">
+
+                    <button
+                        type="button"
+                        class="sidebar-toggle"
+                        id="sidebarToggleBtn"
+                        aria-label="Toggle sidebar">
+                        ☰
+                    </button>
+
+
+                    <div class="global-search">
+
+                        <span class="search-icon">⌕</span>
+
+                        <input
+                            type="search"
+                            id="globalSearch"
+                            placeholder="Search anything..."
+                            autocomplete="off">
+
+                        <span class="search-shortcut">
+                            Ctrl K
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="navbar-right">
+
+                    <button
+                        type="button"
+                        class="navbar-icon-button notification-button"
+                        id="notificationBtn"
+                        aria-label="Notifications">
+
+                        <span class="notification-icon">♢</span>
+
+                        <span
+                            class="notification-badge"
+                            id="notificationBadge">
+                            3
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="navbar-icon-button"
+                        id="themeToggleBtn"
+                        aria-label="Toggle theme">
+
+                        <span id="themeIcon">☾</span>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="navbar-user"
+                        id="userMenuBtn">
+
+                        <div class="navbar-user-avatar">
+                            <span id="navbarUserInitial">R</span>
+                        </div>
+
+                        <div class="navbar-user-info">
+
+                            <strong id="navbarUserName">
+                                Rakib
+                            </strong>
+
+                            <small id="navbarUserRole">
+                                Administrator
+                            </small>
+
+                        </div>
+
+                        <span class="user-menu-arrow">
+                            ⌄
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </header>
+
+
+            <!-- =========================================
+                 PAGE CONTENT
+            ========================================== -->
+            <section class="page-content">
+
+                <!-- PAGE HEADER -->
+                <div class="page-header">
+
+                    <div class="page-header-left">
+
+                        <div class="breadcrumb">
+
+                            <a href="dashboard.html">
+                                Dashboard
+                            </a>
+
+                            <span>/</span>
+
+                            <span>Sales</span>
+
+                        </div>
+
+                        <h1>Sales Management</h1>
+
+                        <p>
+                            Create sales, manage orders and track your
+                            business transactions.
+                        </p>
+
+                    </div>
+
+
+                    <div class="page-header-actions">
+
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            id="viewSalesHistoryBtn">
+
+                            <span>▤</span>
+                            Sales History
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="primary-button"
+                            id="createSaleBtn">
+
+                            <span>＋</span>
+                            Create New Sale
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================================
+                     SALES SUMMARY
+                ========================================== -->
+                <div class="stats-grid sales-stats-grid">
+
+                    <!-- Today's Sales -->
+                    <div class="stat-card">
+
+                        <div class="stat-card-content">
+
+                            <div>
+
+                                <p class="stat-label">
+                                    Today's Sales
+                                </p>
+
+                                <h2
+                                    class="stat-value"
+                                    id="todaySalesAmount">
+                                    ৳0
+                                </h2>
+
+                                <span class="stat-description">
+                                    Today's revenue
+                                </span>
+
+                            </div>
+
+                            <div class="stat-icon">
+                                ৳
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Today's Orders -->
+                    <div class="stat-card">
+
+                        <div class="stat-card-content">
+
+                            <div>
+
+                                <p class="stat-label">
+                                    Today's Orders
+                                </p>
+
+                                <h2
+                                    class="stat-value"
+                                    id="todayOrdersCount">
+                                    0
+                                </h2>
+
+                                <span class="stat-description">
+                                    Orders completed
+                                </span>
+
+                            </div>
+
+                            <div class="stat-icon">
+                                ▣
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Pending Orders -->
+                    <div class="stat-card warning-card">
+
+                        <div class="stat-card-content">
+
+                            <div>
+
+                                <p class="stat-label">
+                                    Pending Orders
+                                </p>
+
+                                <h2
+                                    class="stat-value"
+                                    id="pendingOrdersCount">
+                                    0
+                                </h2>
+
+                                <span class="stat-description">
+                                    Need processing
+                                </span>
+
+                            </div>
+
+                            <div class="stat-icon warning-icon">
+                                ⚠
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Monthly Sales -->
+                    <div class="stat-card">
+
+                        <div class="stat-card-content">
+
+                            <div>
+
+                                <p class="stat-label">
+                                    Monthly Sales
+                                </p>
+
+                                <h2
+                                    class="stat-value"
+                                    id="monthlySalesAmount">
+                                    ৳0
+                                </h2>
+
+                                <span class="stat-description">
+                                    Current month
+                                </span>
+
+                            </div>
+
+                            <div class="stat-icon">
+                                ↗
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================================
+                     CREATE SALE SECTION
+                ========================================== -->
+                <div
+                    class="content-card sale-builder-card"
+                    id="saleBuilder">
+
+                    <div class="content-card-header">
+
+                        <div>
+
+                            <h2>Create New Sale</h2>
+
+                            <p>
+                                Select a customer and add products to
+                                create a new sale.
+                            </p>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="icon-button"
+                            id="clearSaleBtn"
+                            title="Clear sale">
+                            ↻
+                        </button>
+
+                    </div>
+
+
+                    <!-- CUSTOMER / SALE INFO -->
+                    <div class="sale-information-grid">
+
+                        <div class="form-group">
+
+                            <label for="saleCustomer">
+                                Customer
+                                <span class="required">*</span>
+                            </label>
+
+                            <select
+                                id="saleCustomer"
+                                name="customer">
+
+                                <option value="">
+                                    Walk-in Customer
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="saleDate">
+                                Sale Date
+                                <span class="required">*</span>
+                            </label>
+
+                            <input
+                                type="date"
+                                id="saleDate"
+                                name="saleDate">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="saleReference">
+                                Reference / Order ID
+                            </label>
+
+                            <input
+                                type="text"
+                                id="saleReference"
+                                name="reference"
+                                placeholder="e.g. ORD-10001">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="salePaymentMethod">
+                                Payment Method
+                                <span class="required">*</span>
+                            </label>
+
+                            <select
+                                id="salePaymentMethod"
+                                name="paymentMethod">
+
+                                <option value="cash">
+                                    Cash
+                                </option>
+
+                                <option value="card">
+                                    Card
+                                </option>
+
+                                <option value="mobile-banking">
+                                    Mobile Banking
+                                </option>
+
+                                <option value="bank-transfer">
+                                    Bank Transfer
+                                </option>
+
+                                <option value="credit">
+                                    Credit
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =========================================
+                         PRODUCT SEARCH
+                    ========================================== -->
+                    <div class="sale-product-selector">
+
+                        <div class="product-selector-header">
+
+                            <div>
+
+                                <h3>Add Products</h3>
+
+                                <p>
+                                    Search and add products to the sale cart.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="product-search-row">
+
+                            <div class="product-search-input">
+
+                                <span class="search-icon">
+                                    ⌕
+                                </span>
+
+                                <input
+                                    type="search"
+                                    id="saleProductSearch"
+                                    placeholder="Search product by name or SKU..."
+                                    autocomplete="off">
+
+                            </div>
+
+
+                            <div class="product-category-filter">
+
+                                <select
+                                    id="saleProductCategory">
+
+                                    <option value="all">
+                                        All Categories
+                                    </option>
+
+                                    <option value="electronics">
+                                        Electronics
+                                    </option>
+
+                                    <option value="accessories">
+                                        Accessories
+                                    </option>
+
+                                    <option value="office">
+                                        Office Supplies
+                                    </option>
+
+                                    <option value="furniture">
+                                        Furniture
+                                    </option>
+
+                                    <option value="software">
+                                        Software
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- PRODUCT SEARCH RESULTS -->
+                        <div
+                            class="product-search-results"
+                            id="saleProductResults">
+
+                            <!--
+                                Product search results
+                                will be generated by JavaScript.
+                            -->
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =========================================
+                         CART
+                    ========================================== -->
+                    <div class="sale-cart-section">
+
+                        <div class="cart-header">
+
+                            <div>
+
+                                <h3>
+                                    Sale Cart
+                                </h3>
+
+                                <span id="cartItemCount">
+                                    0 items
+                                </span>
+
+                            </div>
+
+                            <button
+                                type="button"
+                                class="text-button danger-text"
+                                id="clearCartBtn">
+                                Clear Cart
+                            </button>
+
+                        </div>
+
+
+                        <div class="table-responsive">
+
+                            <table
+                                class="data-table sales-cart-table"
+                                id="salesCartTable">
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>Product</th>
+
+                                        <th>SKU</th>
+
+                                        <th>Price</th>
+
+                                        <th>Quantity</th>
+
+                                        <th>Discount</th>
+
+                                        <th>Subtotal</th>
+
+                                        <th>Action</th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody id="salesCartBody">
+
+                                    <!--
+                                        Cart items will be
+                                        rendered dynamically.
+                                    -->
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+
+                        <!-- Empty Cart -->
+                        <div
+                            class="empty-state cart-empty-state"
+                            id="cartEmptyState">
+
+                            <div class="empty-state-icon">
+                                🛒
+                            </div>
+
+                            <h3>
+                                Your cart is empty
+                            </h3>
+
+                            <p>
+                                Search for a product above and add it
+                                to the sale.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =========================================
+                         SALE CALCULATION
+                    ========================================== -->
+                    <div class="sale-summary-section">
+
+                        <div class="sale-summary-notes">
+
+                            <div class="form-group">
+
+                                <label for="saleNotes">
+                                    Notes
+                                </label>
+
+                                <textarea
+                                    id="saleNotes"
+                                    rows="5"
+                                    placeholder="Add notes for this sale..."></textarea>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="saleCustomerNote">
+                                    Customer Note
+                                </label>
+
+                                <textarea
+                                    id="saleCustomerNote"
+                                    rows="5"
+                                    placeholder="Optional note for customer..."></textarea>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="sale-calculation">
+
+                            <div class="calculation-row">
+
+                                <span>
+                                    Subtotal
+                                </span>
+
+                                <strong id="saleSubtotal">
+                                    ৳0.00
+                                </strong>
+
+                            </div>
+
+
+                            <div class="calculation-row">
+
+                                <span>
+                                    Discount
+                                </span>
+
+                                <strong id="saleDiscount">
+                                    - ৳0.00
+                                </strong>
+
+                            </div>
+
+
+                            <div class="calculation-row">
+
+                                <span>
+                                    VAT / Tax
+                                </span>
+
+                                <div class="calculation-input">
+
+                                    <input
+                                        type="number"
+                                        id="saleTaxRate"
+                                        value="5"
+                                        min="0"
+                                        max="100"
+                                        step="0.01">
+
+                                    <span>%</span>
+
+                                    <strong id="saleTaxAmount">
+                                        ৳0.00
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="calculation-divider"></div>
+
+
+                            <div class="calculation-row total-row">
+
+                                <span>
+                                    Grand Total
+                                </span>
+
+                                <strong id="saleGrandTotal">
+                                    ৳0.00
+                                </strong>
+
+                            </div>
+
+
+                            <div class="calculation-row">
+
+                                <span>
+                                    Paid Amount
+                                </span>
+
+                                <input
+                                    type="number"
+                                    id="salePaidAmount"
+                                    min="0"
+                                    step="0.01"
+                                    placeholder="0.00">
+
+                            </div>
+
+
+                            <div class="calculation-row">
+
+                                <span>
+                                    Due Amount
+                                </span>
+
+                                <strong id="saleDueAmount">
+                                    ৳0.00
+                                </strong>
+
+                            </div>
+
+
+                            <div class="calculation-row">
+
+                                <span>
+                                    Change
+                                </span>
+
+                                <strong id="saleChangeAmount">
+                                    ৳0.00
+                                </strong>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                class="primary-button sale-complete-button"
+                                id="completeSaleBtn">
+
+                                <span>✓</span>
+                                Complete Sale
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================================
+                     RECENT SALES
+                ========================================== -->
+                <div class="content-card">
+
+                    <div class="content-card-header">
+
+                        <div>
+
+                            <h2>
+                                Recent Sales
+                            </h2>
+
+                            <p>
+                                Recently created sales and orders.
+                            </p>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            id="refreshSalesBtn">
+                            ↻ Refresh
+                        </button>
+
+                    </div>
+
+
+                    <!-- FILTER TOOLBAR -->
+                    <div class="table-toolbar">
+
+                        <div class="table-search">
+
+                            <span class="search-icon">
+                                ⌕
+                            </span>
+
+                            <input
+                                type="search"
+                                id="salesSearch"
+                                placeholder="Search sales..."
+                                autocomplete="off">
+
+                        </div>
+
+
+                        <div class="filter-control">
+
+                            <label for="salesStatusFilter">
+                                Status
+                            </label>
+
+                            <select id="salesStatusFilter">
+
+                                <option value="all">
+                                    All Status
+                                </option>
+
+                                <option value="completed">
+                                    Completed
+                                </option>
+
+                                <option value="pending">
+                                    Pending
+                                </option>
+
+                                <option value="cancelled">
+                                    Cancelled
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="filter-control">
+
+                            <label for="salesPaymentFilter">
+                                Payment
+                            </label>
+
+                            <select id="salesPaymentFilter">
+
+                                <option value="all">
+                                    All Methods
+                                </option>
+
+                                <option value="cash">
+                                    Cash
+                                </option>
+
+                                <option value="card">
+                                    Card
+                                </option>
+
+                                <option value="mobile-banking">
+                                    Mobile Banking
+                                </option>
+
+                                <option value="bank-transfer">
+                                    Bank Transfer
+                                </option>
+
+                                <option value="credit">
+                                    Credit
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="filter-control">
+
+                            <label for="salesSort">
+                                Sort By
+                            </label>
+
+                            <select id="salesSort">
+
+                                <option value="recent">
+                                    Most Recent
+                                </option>
+
+                                <option value="oldest">
+                                    Oldest
+                                </option>
+
+                                <option value="amount-high">
+                                    Amount High-Low
+                                </option>
+
+                                <option value="amount-low">
+                                    Amount Low-High
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="reset-filter-button"
+                            id="resetSalesFilters">
+                            Reset
+                        </button>
+
+                    </div>
+
+
+                    <!-- SALES TABLE -->
+                    <div class="table-responsive">
+
+                        <table
+                            class="data-table"
+                            id="salesTable">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        <input
+                                            type="checkbox"
+                                            id="selectAllSales">
+                                    </th>
+
+                                    <th>Order ID</th>
+
+                                    <th>Customer</th>
+
+                                    <th>Items</th>
+
+                                    <th>Subtotal</th>
+
+                                    <th>Discount</th>
+
+                                    <th>Total</th>
+
+                                    <th>Payment</th>
+
+                                    <th>Status</th>
+
+                                    <th>Date</th>
+
+                                    <th>Actions</th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="salesTableBody">
+
+                                <!--
+                                    Sales records will be
+                                    dynamically rendered.
+                                -->
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+                    <!-- Empty State -->
+                    <div
+                        class="empty-state"
+                        id="salesEmptyState"
+                        hidden>
+
+                        <div class="empty-state-icon">
+                            ▰
+                        </div>
+
+                        <h3>
+                            No sales found
+                        </h3>
+
+                        <p>
+                            No sales match your current search or filters.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            id="clearSalesFiltersBtn">
+                            Clear Filters
+                        </button>
+
+                    </div>
+
+
+                    <!-- PAGINATION -->
+                    <div class="table-footer">
+
+                        <div class="bulk-actions">
+
+                            <span id="selectedSalesCount">
+                                0 selected
+                            </span>
+
+                            <button
+                                type="button"
+                                class="text-button danger-text"
+                                id="bulkCancelSalesBtn"
+                                hidden>
+                                Cancel Selected
+                            </button>
+
+                        </div>
+
+
+                        <div class="pagination-info">
+
+                            Showing
+                            <strong id="salesShowingFrom">
+                                0
+                            </strong>
+
+                            -
+
+                            <strong id="salesShowingTo">
+                                0
+                            </strong>
+
+                            of
+
+                            <strong id="salesTotalCount">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="pagination">
+
+                            <button
+                                type="button"
+                                class="pagination-button"
+                                id="salesPrevPage"
+                                aria-label="Previous page">
+                                ‹
+                            </button>
+
+                            <div
+                                class="pagination-pages"
+                                id="salesPaginationPages">
+                            </div>
+
+                            <button
+                                type="button"
+                                class="pagination-button"
+                                id="salesNextPage"
+                                aria-label="Next page">
+                                ›
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================================
+         SALE DETAILS MODAL
+    ========================================== -->
+    <div
+        class="modal-overlay"
+        id="saleDetailsModal"
+        hidden>
+
+        <div
+            class="modal modal-large"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="saleDetailsTitle">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <h2 id="saleDetailsTitle">
+                        Sale Details
+                    </h2>
+
+                    <p>
+                        View complete information about this sale.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="closeSaleDetailsModal"
+                    aria-label="Close modal">
+                    &times;
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <!-- Sale Header -->
+                <div class="sale-details-header">
+
+                    <div>
+
+                        <span class="detail-label">
+                            Order ID
+                        </span>
+
+                        <h3 id="saleDetailsOrderId">
+                            ORD-00000
+                        </h3>
+
+                    </div>
+
+
+                    <div>
+
+                        <span class="detail-label">
+                            Status
+                        </span>
+
+                        <span
+                            class="status-badge"
+                            id="saleDetailsStatus">
+                            Completed
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <span class="detail-label">
+                            Date
+                        </span>
+
+                        <strong id="saleDetailsDate">
+                            -
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Customer -->
+                <div class="details-section">
+
+                    <h3>
+                        Customer Information
+                    </h3>
+
+                    <div class="details-grid">
+
+                        <div class="detail-item">
+
+                            <span class="detail-label">
+                                Name
+                            </span>
+
+                            <strong id="saleDetailsCustomer">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span class="detail-label">
+                                Phone
+                            </span>
+
+                            <strong id="saleDetailsPhone">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span class="detail-label">
+                                Email
+                            </span>
+
+                            <strong id="saleDetailsEmail">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail-item">
+
+                            <span class="detail-label">
+                                Payment Method
+                            </span>
+
+                            <strong id="saleDetailsPayment">
+                                -
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Products -->
+                <div class="details-section">
+
+                    <h3>
+                        Products
+                    </h3>
+
+                    <div class="table-responsive">
+
+                        <table class="data-table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>Product</th>
+
+                                    <th>SKU</th>
+
+                                    <th>Price</th>
+
+                                    <th>Qty</th>
+
+                                    <th>Discount</th>
+
+                                    <th>Total</th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="saleDetailsProductsBody">
+
+                                <!-- Dynamic -->
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Total -->
+                <div class="sale-details-total">
+
+                    <div class="calculation-row">
+
+                        <span>
+                            Subtotal
+                        </span>
+
+                        <strong id="saleDetailsSubtotal">
+                            ৳0.00
+                        </strong>
+
+                    </div>
+
+
+                    <div class="calculation-row">
+
+                        <span>
+                            Discount
+                        </span>
+
+                        <strong id="saleDetailsDiscount">
+                            - ৳0.00
+                        </strong>
+
+                    </div>
+
+
+                    <div class="calculation-row">
+
+                        <span>
+                            Tax
+                        </span>
+
+                        <strong id="saleDetailsTax">
+                            ৳0.00
+                        </strong>
+
+                    </div>
+
+
+                    <div class="calculation-divider"></div>
+
+
+                    <div class="calculation-row total-row">
+
+                        <span>
+                            Grand Total
+                        </span>
+
+                        <strong id="saleDetailsGrandTotal">
+                            ৳0.00
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    id="closeSaleDetailsBtn">
+                    Close
+                </button>
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    id="printSaleBtn">
+                    Print
+                </button>
+
+                <button
+                    type="button"
+                    class="primary-button"
+                    id="saleGenerateInvoiceBtn">
+                    Generate Invoice
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         CANCEL SALE MODAL
+    ========================================== -->
+    <div
+        class="modal-overlay"
+        id="cancelSaleModal"
+        hidden>
+
+        <div
+            class="modal modal-small"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="cancelSaleTitle">
+
+            <div class="modal-header">
+
+                <h2 id="cancelSaleTitle">
+                    Cancel Sale
+                </h2>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="closeCancelSaleModal"
+                    aria-label="Close modal">
+                    &times;
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <div class="confirmation-content">
+
+                    <div class="confirmation-icon danger-icon">
+                        !
+                    </div>
+
+                    <h3>
+                        Are you sure?
+                    </h3>
+
+                    <p>
+                        Cancelling this sale may restore the sold product
+                        quantities to inventory.
+                    </p>
+
+                    <input
+                        type="hidden"
+                        id="cancelSaleId">
+
+                    <div class="form-group">
+
+                        <label for="cancelSaleReason">
+                            Cancellation Reason
+                        </label>
+
+                        <textarea
+                            id="cancelSaleReason"
+                            rows="3"
+                            placeholder="Enter cancellation reason..."></textarea>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    id="cancelSaleCancelBtn">
+                    Keep Sale
+                </button>
+
+                <button
+                    type="button"
+                    class="danger-button"
+                    id="confirmCancelSaleBtn">
+                    Cancel Sale
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         NOTIFICATION MODAL
+    ========================================== -->
+    <div
+        class="modal-overlay"
+        id="notificationModal"
+        hidden>
+
+        <div
+            class="modal modal-medium"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="notificationModalTitle">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <h2 id="notificationModalTitle">
+                        Notifications
+                    </h2>
+
+                    <p>
+                        Recent alerts and system activities.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="closeNotificationModal"
+                    aria-label="Close notifications">
+                    &times;
+                </button>
+
+            </div>
+
+
+            <div
+                class="modal-body notification-list"
+                id="notificationList">
+
+                <div class="notification-item unread">
+
+                    <div class="notification-item-icon warning-icon">
+                        ⚠
+                    </div>
+
+                    <div class="notification-item-content">
+
+                        <strong>
+                            Low Stock Alert
+                        </strong>
+
+                        <p>
+                            Some products are below the minimum stock level.
+                        </p>
+
+                        <small>
+                            Just now
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="notification-item">
+
+                    <div class="notification-item-icon">
+                        ✓
+                    </div>
+
+                    <div class="notification-item-content">
+
+                        <strong>
+                            Sale Completed
+                        </strong>
+
+                        <p>
+                            A new sale has been successfully completed.
+                        </p>
+
+                        <small>
+                            20 minutes ago
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="notification-item">
+
+                    <div class="notification-item-icon">
+                        ▣
+                    </div>
+
+                    <div class="notification-item-content">
+
+                        <strong>
+                            New Order
+                        </strong>
+
+                        <p>
+                            A new customer order has been received.
+                        </p>
+
+                        <small>
+                            1 hour ago
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="text-button"
+                    id="markNotificationsReadBtn">
+                    Mark all as read
+                </button>
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    id="closeNotificationsBtn">
+                    Close
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         USER DROPDOWN
+    ========================================== -->
+    <div
+        class="dropdown-menu user-dropdown"
+        id="userDropdown"
+        hidden>
+
+        <div class="dropdown-user-header">
+
+            <div class="user-avatar">
+                <span>R</span>
+            </div>
+
+            <div>
+
+                <strong id="dropdownUserName">
+                    Rakib
+                </strong>
+
+                <small id="dropdownUserEmail">
+                    admin@nexora.com
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="dropdown-divider"></div>
+
+
+        <a
+            href="#"
+            class="dropdown-item"
+            id="profileMenuItem">
+
+            <span>♙</span>
+            My Profile
+
+        </a>
+
+
+        <button
+            type="button"
+            class="dropdown-item"
+            id="settingsMenuItem">
+
+            <span>⚙</span>
+            Settings
+
+        </button>
+
+
+        <div class="dropdown-divider"></div>
+
+
+        <button
+            type="button"
+            class="dropdown-item danger-text"
+            id="dropdownLogoutBtn">
+
+            <span>↪</span>
+            Logout
+
+        </button>
+
+    </div>
+
+
+    <!-- =========================================
+         LOGOUT CONFIRMATION
+    ========================================== -->
+    <div
+        class="modal-overlay"
+        id="logoutModal"
+        hidden>
+
+        <div
+            class="modal modal-small"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="logoutModalTitle">
+
+            <div class="modal-header">
+
+                <h2 id="logoutModalTitle">
+                    Logout
+                </h2>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="closeLogoutModal"
+                    aria-label="Close modal">
+                    &times;
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <div class="confirmation-content">
+
+                    <div class="confirmation-icon">
+                        ↪
+                    </div>
+
+                    <h3>
+                        Do you want to logout?
+                    </h3>
+
+                    <p>
+                        You will be redirected to the login page.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    id="cancelLogoutBtn">
+                    Cancel
+                </button>
+
+                <button
+                    type="button"
+                    class="danger-button"
+                    id="confirmLogoutBtn">
+                    Logout
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         GLOBAL LOADING
+    ========================================== -->
+    <div
+        class="loading-overlay"
+        id="globalLoading"
+        hidden>
+
+        <div class="loading-content">
+
+            <div class="loading-spinner"></div>
+
+            <p id="loadingMessage">
+                Processing sale...
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         TOAST CONTAINER
+    ========================================== -->
+    <div
+        class="toast-container"
+        id="toastContainer"
+        aria-live="polite"
+        aria-atomic="true">
+
+        <!-- Dynamic toast messages -->
+
+    </div>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+    <script
+        type="module"
+        src="../js/app.js">
+    </script>
+
+    <script
+        type="module"
+        src="../js/sales.js">
+    </script>
+
+</body>
+</html>
